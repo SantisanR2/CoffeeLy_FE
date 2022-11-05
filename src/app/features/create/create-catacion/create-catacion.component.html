@@ -1,0 +1,82 @@
+<header>
+    <app-nav-finca></app-nav-finca>
+</header>
+
+<div class="contenedor">
+    <h1 class="titulo">Catación</h1>
+    <div class="contenedor-2"> 
+        <div class="card-info"> 
+            <p>Fecha: Es la fecha y hora a la que empieza la catación de la taza de café. </p>
+            <p>Tiempo 1: Es el tiempo de la primera pasada, en minutos. </p>
+            <p>Temp. 1: Temperatura de la primera pasada, en °C</p>
+            <p>Tiempo 2: Es el tiempo de la segunda pasada, en minutos. </p>
+            <p>Temp. 2: Temperatura de la segunda pasada, en °C</p>
+            <p>Tiempo 3: Es el tiempo de la tercera pasada, en minutos. </p>
+            <p>Temp. 3: Temperatura de la tercera pasada, en °C</p>
+            <p>Puntaje SCA: Puntaje obtenido tras diligenciar el formulario de la SCA. </p>
+            <p>Tabla: Archivo PDF o imagen de la tabla de calificación de la SCA usada. </p>
+        </div>
+        <form class="card-catacion" (ngSubmit)="submit()" [formGroup]="catacionForm">
+            <div class="form-group">
+                <label for="inputDate">Fecha</label>  
+                <input type="datetime-local" id="inputDate" formControlName="fecha">
+            </div>    
+
+            <div class="form-group unidad">
+                <p class="pasada"> 1A PASADA </p>
+                <div class="form-group juntos">
+                    <div class="form-group">
+                        <label for="inputTiempo1">Tiempo 1</label>
+                        <input type="number" step="any" min="0" placeholder="0 (min)" id="inputTiempo1" formControlName="tiempo1">
+                    </div> 
+                    <div class="form-group">
+                        <label for="inputTemp1">Temp. 1</label>
+                        <input type="number" step="any" min="0" placeholder="30 (°C)" id="inputTemp1" formControlName="temp1">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group unidad">
+                <p class="pasada"> 2A PASADA </p>
+                <div class="form-group juntos">
+                    <div class="form-group">
+                        <label for="inputTiempo2">Tiempo 2</label>
+                        <input type="number" step="any" min="0" placeholder="0 (min)" id="inputTiempo2" formControlName="tiempo2">
+                    </div> 
+                    <div class="form-group">
+                        <label for="inputTemp2">Temp. 2</label>
+                        <input type="number" step="any" min="0" placeholder="30 (°C)" id="inputTemp2" formControlName="temp2">
+                    </div> 
+                </div>
+            </div>
+
+            <div class="form-group unidad">
+                <p class="pasada"> 3A PASADA </p>
+                <div class="form-group juntos">
+                    <div class="form-group">
+                        <label for="inputTiempo3">Tiempo 3</label>
+                        <input type="number" step="any" min="0" placeholder="0 (min)" id="inputTiempo3" formControlName="tiempo3">
+                    </div> 
+                    <div class="form-group">
+                        <label for="inputTemp3">Temp. 3</label>
+                        <input type="number" step="any" min="0" placeholder="30 (°C)" id="inputTemp3" formControlName="temp3">
+                    </div> 
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputPuntaje">Puntaje SCA</label>
+                <input type="number" step="any" min="0" max= "100" placeholder="0-100" id="inputPuntaje" formControlName="puntaje">
+            </div>
+            <div class="form-group">
+                <label for="inputTabla"> Tabla </label>
+                <input type="file" accept="image/*,.pdf" id="inputCurva" formControlName="curva">
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Ingresar">
+            </div>
+        </form>
+    </div>
+        
+</div>

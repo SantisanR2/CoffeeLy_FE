@@ -1,0 +1,49 @@
+.contenedor{
+    display: flex;
+    background-color: var(--coffeLy);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+
+    h1{
+        position: absolute;
+        top: 15vh;
+        font-size: 3em;
+        color: #C29F42;
+        font-weight: 700;
+    }
+}
+
+.card-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 400px;
+    gap: 30px;
+    background-color: rgba(148, 148, 148, 0.2);
+    color: #C29F42;
+}
+
+.form-group{
+    width: 300px;
+}
+
+.alerta-password {
+    font-size: small;
+    position: absolute;
+    margin-top: 8rem;
+}
+
+.alerta-correo {
+    font-size: small;
+    position: absolute;
+    margin-top: 8rem;
+}

@@ -1,0 +1,85 @@
+<header>
+    <app-nav-finca> </app-nav-finca>
+</header>
+
+<div class="contenedor">
+    <div class="container-titulo">
+        <h1 class="titulo"> Historial y modificación del lote {{id_lote}} </h1>
+    </div>
+    
+
+    <div class="botones"> 
+        <button (click)="irPoda()" class="boton" type="button">
+            <img src={{podar}} alt="Poda">
+            <div class="polaroid"> Poda </div>
+        </button>
+        <button (click)="irRiego()" class="boton" type="button">
+            <img src={{regar}} alt="Riego">
+            <div class="polaroid"> Riego </div>
+        </button>
+        <button (click)="irFertilizacion()" class="boton" type="button">
+            <img src={{fertilizar}} alt="Fertilización">
+            <div class="polaroid"> Fertilización </div>
+        </button>
+    </div>
+
+    <div class="siembra"> 
+        <h3>El lote fue sembrado el día {{fechaSiembra}}</h3> 
+        <h3>El lote es de variedad: <span>{{variedad}}</span></h3> 
+    </div>
+    
+    
+    <div class="table-todo">
+        <div class="tablas"> 
+            <h3> Podas </h3>
+            <ul class="poda"> 
+                <li class="item-first">
+                    <span> Fecha </span>  <span> </span>      
+                        <li class="item" *ngFor="let poda of podas"> 
+                            <span>{{poda.fecha}}</span>
+                            <div (click)="deletePoda(poda.id)" class="delete"><img src={{deleteLogoPath}} alt="deleteLogo">
+                            </div>
+                        </li>
+            </ul>
+        </div>
+
+        <div class="tablas">
+            <h3> Riegos </h3>
+            <ul class="riego">
+                <li class="item-first">
+                    <span>Fecha</span><span>Agua (L)</span> <span> </span>
+                    <li class="item" *ngFor="let riego of riegos">
+                        <span> {{riego.fecha}} </span>
+                        <span> {{riego.agua}} </span>
+                        <div (click)="deleteRiego(riego.id)" class="delete"><img src={{deleteLogoPath}} alt="deleteLogo">
+                        </div>
+                </li>  
+            </ul>
+        </div>
+       
+        <div class="tablas"> 
+            <h3> Fertilizaciones </h3>
+            <ul class="fertilizacion"> 
+                <li class="item-first">
+                    <span>Fecha </span><span>Relación</span> <span></span>   
+                        <li class="item" *ngFor="let fertilizacion of fertilizaciones">
+                            <span> {{fertilizacion.fecha}} </span>
+                            <span> {{fertilizacion.relacion}} </span>
+                            <div (click)="deleteFertilizacion(fertilizacion.id)" class="delete"><img src={{deleteLogoPath}} alt="deleteLogo">
+                            </div>
+            </ul>
+        </div>
+        
+    </div>
+
+    <div class="cosecha"> 
+        <button class="boton" (click)="irCosecha()" type="button">
+            <img src={{cosecharPath}} alt="Cosecha">
+            <div class="polaroid"> Cosechar </div>
+        </button>
+    </div>
+
+</div>
+
+
+

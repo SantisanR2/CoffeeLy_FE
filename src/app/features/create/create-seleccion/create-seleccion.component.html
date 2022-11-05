@@ -1,0 +1,43 @@
+<header>
+    <app-nav-finca></app-nav-finca>
+</header>
+
+<div class="contenedor">
+    <h1 class="titulo">Selección</h1>
+    <div class="contenedor-2"> 
+        <div class="card-info"> 
+            <p>Fecha: Es la fecha y hora a la que empieza la selección del lote. </p>
+            <p>Entrada: Masa que entra al proceso de selección, medida en kg. </p>
+            <p>Salida: Masa de los granos que pasan el proceso de selección, medida en kg. </p>
+            <p>Defectuoso: Masa de los granos que no pasaron los requerimientos de grano de café, medida en kg. </p>            
+            <p>Defectos: Anotación de los defectos presentes en el lote, separados por comas. </p>         
+        </div>
+        <form class="card-secado" (ngSubmit)="submit()" [formGroup]="seleccionForm">
+            <div class="form-group">
+                <label for="inputDate1">Fecha</label>  
+                <input type="datetime-local" id="inputDate1" formControlName="fecha">
+            </div>    
+            <div class="form-group">
+                <label for="inputEntrada">Entrada</label>
+                <input type="number" step="any" min="0" placeholder="0 (kg)" id="inputEntrada" formControlName="cantidadEntra">
+            </div> 
+            <div class="form-group">
+                <label for="inputSalida">Salida</label>
+                <input type="number" step="any" min="0" placeholder="0 (kg)" id="inputSalida" formControlName="cantidadSale">
+            </div>
+            <div class="form-group">
+                <label for="inputDefectuoso">Defectuoso</label>  
+                <input type="number" step="any" min="0" placeholder="0 (kg)" id="inputDefectuoso" formControlName="defectuosos">
+            </div>
+            <div class="form-group">
+                <label for="inputDefectuoso">Defectos</label>  
+                <input type="text" step="any" min="0" placeholder="brocado, hongos, ambar..." id="inputDefectuoso" formControlName="defectos">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Ingresar">
+            </div>
+        </form>
+    </div>
+        
+</div>
+

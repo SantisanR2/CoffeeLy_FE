@@ -1,0 +1,21 @@
+<header>
+    <app-nav-finca></app-nav-finca>
+</header>
+
+<div class="contenedor">
+    <h1 class="titulo"> Lote </h1>
+    <div class="container-2">
+        <div class="card-info"> 
+            <p>Cantidad: es el peso en kilogramos del lote. <p>
+        </div>
+        <form  (ngSubmit)="submit()" [formGroup]="loteForm" class="card-lote">
+            <div class="cantidad">
+                <label for="inputCantidad">Cantidad</label>  
+                <input type="number" step="1" min="0" id="inputCantidad" formControlName="cantidad">
+            </div>
+            <div class="boton">
+                <input type="submit" [disabled]="!loteForm.valid" value="Ingresar">
+            </div>
+        </form>
+    </div>
+</div>

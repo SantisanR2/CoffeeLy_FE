@@ -1,0 +1,18 @@
+<header>
+    <app-nav-finca></app-nav-finca>
+</header>
+<div class="inicio">
+    <h1>Operarios</h1>
+    <table class="contenedor">
+        <tr>
+          <td><span class="bold">Nombre</span></td>
+          <td><span class="bold">Celular</span></td>
+          <td><a class="btn" href="/login/register"><span>+</span> Nuevo Recolector</a></td>
+        </tr>
+        <tr class="item" *ngFor="let operario of respuesta">
+          <td><span class="nombre">{{operario.name}}</span></td>
+          <td><span class="celular">{{operario.celular }}</span></td>
+          <td><div (click)="delete(operario.id)" class="delete"><img src={{deleteLogoPath}} alt="deleteLogo"></div></td>
+        </tr>
+      </table>
+</div>

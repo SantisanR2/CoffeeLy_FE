@@ -1,0 +1,19 @@
+<nav class="navbar navbar-light navbar-expand-md py-3" style="background: rgba(194,159,66);border-style: none;">
+    <div class="container"><img src="assets/Logo.png" width="57" height="58"><a class="navbar-brand d-flex align-items-center" href="#"><span style="margin-left: 13px;">CoffeeLy</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navcol-1" *ngIf="isAdmin; else elseBlock">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item"><a class="nav-link active" href="{{inicioPath}}">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" >Administrar recolectores</a></li>
+                <li class="nav-item"><a class="nav-link" (click)="perfil()">{{username}}</a></li>
+            </ul><button class="btn me-3" type="button" >Salir</button>
+        </div>
+        <ng-template #elseBlock>
+            <div class="collapse navbar-collapse" id="navcol-1" #elseBlock>
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="{{inicioPath}}">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" (click)="perfil()">{{username}}</a></li>
+                </ul><button class="btn me-3" type="button" (click)="cerrar()">Salir</button>
+            </div>
+        </ng-template>
+    </div>
+</nav>

@@ -1,0 +1,22 @@
+<header>
+    <app-nav-empresa></app-nav-empresa>
+</header>
+<div class="inicio">
+    <h1>LOTES</h1>
+    <ul class="contenedor">
+        <li class="item-first">
+            <span>ID</span><span>Peso</span><span>Estado</span><a class="boton"><span>+</span> Nuevo Lote</a>
+        </li>
+        <li class="item" *ngFor="let lote of respuesta">
+            <span class="id">#{{lote.id}}</span>
+            <span class="cantidad">{{lote.cantidad }} kg</span>
+            <span class="estado"><span class="capitalize">{{lote.estado}}</span></span>
+            <div class="contenedor-icons">
+                <div (click)="detail(lote.id)" class="detail"><img src={{detailLogoPath}} alt="detailLogo"></div>
+                <div (click)="edit(lote.id)" class="edit"><img src={{editLogoPath}} alt="editLogo"></div>
+                <div (click)="delete(lote.id)" class="delete"><img src={{deleteLogoPath}} alt="deleteLogo"></div>
+            </div>
+        </li>
+    </ul>
+    <div></div>
+</div>

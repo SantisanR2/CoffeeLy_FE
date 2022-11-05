@@ -1,0 +1,63 @@
+.register {
+    display: flex;
+    background-color: var(--coffeLy);
+    color: var(--coffeLy-font);
+    flex-direction: column;
+    font-family: Basker;
+}
+
+.register h1 {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    text-align: center;
+    font-family: Basker;
+}
+
+.container{
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.card-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 30vw;
+    min-width: 350px;
+    gap: 30px;
+    background-color: rgba(148, 148, 148, 0.2);
+    color: #C29F42;
+}
+
+.form-group{
+    width: 300px;
+}
+
+.form-group:first-child {
+    padding-top: 1vh;
+}
+
+input[type=submit] {
+    margin-bottom: 5vh;
+}
+
+.ribbon{
+    background-color: var(--regis-cafe);
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+}

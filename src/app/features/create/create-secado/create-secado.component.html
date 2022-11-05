@@ -1,0 +1,52 @@
+<header>
+    <app-nav-finca></app-nav-finca>
+</header>
+
+<div class="contenedor">
+    <h1 class="titulo">Secado</h1>
+    <div class="contenedor-2"> 
+        <div class="card-info"> 
+            <p>Fecha 1: Es la fecha y hora a la que empieza el secado del lote. </p>
+            <p>Fecha 2: Es la fecha y hora a la que finaliza el secado del lote.</p>
+            <p>Temp. ambiente: Temperatura exterior promedio al momento de secar el lote, en °C. </p>
+            <p>Temp. grano: Temperatura a la que se espera llegará el bache, medida en °C.</p>
+            <p>Humedad: Cantidad de agua presente en los granos posterior al secado, reportado en b.h. </p>
+            <p>Densidad: Peso estimado de 1 litro de café, presentado en g/L </p>
+        </div>
+        <form class="card-secado" (ngSubmit)="submit()" [formGroup]="secadoForm">
+            <div class="form-group">
+                <label for="inputDate1">Fecha 1</label>  
+                <input type="datetime-local" id="inputDate1" formControlName="fechaInicio">
+            </div>    
+            <div class="form-group">
+                <label for="inputDate2">Fecha 2</label>  
+                <input type="datetime-local" id="inputDate2" formControlName="fechaFinal">
+            </div>
+            <div class="form-group">
+                <label for="inputTempAmb">Temp. ambiente</label>
+                <input type="number" step="any" min="0" placeholder="20 (°C)" id="inputTempAmb" formControlName="tempAmb">
+            </div> 
+            <div class="form-group">
+                <label for="inputTempGrano">Temp. grano</label>
+                <input type="number" step="any" min="0" placeholder="0 (kg)" id="inputTempGrano" formControlName="tempGrano">
+            </div> 
+            <div class="form-group">
+                <label for="inputHumedad">Humedad</label>
+                <input type="number" step="any" min="0" max="100" placeholder="0 (b.h.)" id="inputHumedad" formControlName="humedad">
+            </div>
+            <div class="form-group">
+                <label for="inputDensidad">Densidad</label>
+                <input type="number" step="any" min="0" placeholder="0 (g/L)" id="inputDensidad" formControlName="densidad"> 
+            </div>
+            <div class="form-group">
+                <label for="inputMaquina">Maquina</label>
+                <input type="text" step="any"placeholder="Marca, Modelo" id="inputMaquina" formControlName="maquina"> 
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Ingresar">
+            </div>
+        </form>
+    </div>
+        
+</div>

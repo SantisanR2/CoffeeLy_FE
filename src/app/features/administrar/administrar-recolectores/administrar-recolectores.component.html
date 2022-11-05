@@ -1,0 +1,14 @@
+<header>
+  <app-nav-finca></app-nav-finca>
+</header>
+<div class="inicio">
+  <h1>Recolectores</h1>
+  <div class="divcito"><a class="boton" href="/login/register"><span>+</span> Nuevo Recolector</a></div>
+  <table class="contenedor">
+      <tr class="item" *ngFor="let recolector of respuesta">
+        <td><span class="nombre">{{recolector.name}}</span></td>
+        <td><span class="celular">{{recolector.celular }}</span></td>
+        <td><div (click)="delete(recolector.id)" class="delete"><img src={{deleteLogoPath}} alt="deleteLogo"></div></td>
+      </tr>
+    </table>
+</div>

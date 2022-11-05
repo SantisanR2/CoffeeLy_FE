@@ -1,0 +1,116 @@
+.contenedor{
+    display: flex;
+    background-color: var(--coffeLy);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - 9vh - 8.121vh);
+    align-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5vh;
+    gap: 5vh;
+}
+
+.titulo{
+    background-size: cover;
+    font-family: Basker;
+    text-align: center;
+    color: #C29F42;
+}
+
+.contenedor-2{
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    gap: 5vh;
+}
+
+.card-info{
+    width: 30vw;
+    min-width: 300px;
+    min-height: 20vh;
+    color:#C29F42;
+    border: #C29F42 4px;
+    border-style: outset;
+}
+
+.card-info p{
+    margin: 2vh 2vw 2vh 2vw;
+}
+
+.card-siembra{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    width: 50vw;
+    min-width: 300px;
+    gap: 30px;
+    background-color: rgba(148, 148, 148, 0.2);
+    color: #C29F42;
+}
+
+form label{
+    margin: 0.5em;
+}
+form input{
+    margin: 0.5em;
+    outline: .1em solid #C29F42;
+}
+
+@media only screen and (max-width: 700px) {
+    
+    .contenedor{
+
+        display: flex;
+        background-color: var(--coffeLy);
+        background-repeat: no-repeat;
+        background-size: cover;
+        align-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 5vh;
+        gap: 5vh;
+        height: 130vh;
+    }
+    .contenedor-2{
+        display: flex;
+        background-repeat: no-repeat;
+        background-size: cover;
+        align-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        gap: 5vh;
+    }
+
+    .card-info{
+        width: 30vw;
+        min-width: 250px;
+        min-height: 20vh;
+        color:#C29F42;
+        border: #C29F42 4px;
+        border-style: outset;
+    }
+    
+    .card-info p{
+        margin: 2vh 2vw 2vh 2vw;
+    }
+    
+    .card-siembra{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 55vh;
+        width: 55vw;
+        min-width: 320px;
+        gap: 30px;
+        background-color: rgba(148, 148, 148, 0.2);
+        color: #C29F42;
+    }
+
+  }

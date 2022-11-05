@@ -1,0 +1,97 @@
+.contenedor{
+    display: flex;
+    background-color: var(--coffeLy);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: calc(100vh);
+    align-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5vh;
+    gap: 5vh;
+    min-width: 100vw;
+    padding-bottom: 10vw;
+}
+
+.titulo{
+    background-size: cover;
+    font-family: Basker;
+    text-align: center;
+    color: #C29F42;
+}
+
+.contenedor-2{
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vh;
+    padding: 50px 0px;
+    max-width: 90vw;
+    background-color: rgba(148, 148, 148, 0.2);
+    height: auto;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4vh;
+}
+
+.card-fermentacion{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    width: inherit;
+    min-width: 300px;
+    gap: 4vw;
+    color: #C29F42;
+}
+
+.submit-group{
+    position: relative;
+    color: #C29F42;
+}
+
+.submit{
+    color: #C29F42;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.info{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.opciones{
+    width: auto;
+}
+
+input{
+    width: fit-content;
+}
+
+input text {
+    width: auto;
+}
+
+form label{
+    margin: 0.5em;
+}
+div input{
+    margin: 0.5em;
+    outline: .1em solid #C29F42;
+    width: fit-content;
+    text-align: center;
+}

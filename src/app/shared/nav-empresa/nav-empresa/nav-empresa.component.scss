@@ -1,0 +1,28 @@
+nav{
+    display: flex;
+    align-items: center;
+    color: #fff;
+    background-color: var(--coffeLy-font);
+    justify-content: space-between;
+
+    .logo{
+        margin: 10px 0 10px 10px;
+
+        img{
+            height: 9vh;
+        }
+    }
+
+    li{
+        display: inline;
+        margin: 0 10px 0 10px;
+        a{
+            font-size: large;
+            text-decoration: none;
+            color: #0A0703;
+        }
+        .salir{
+            cursor: pointer;
+        }
+    }
+}

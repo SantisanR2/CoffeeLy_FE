@@ -1,0 +1,18 @@
+<nav class="navbar navbar-light navbar-expand-md fixed-top py-3" style="background: rgba(194,159,66,0.5);border-style: none;">
+    <div class="container"><img src="assets/Logo.png" width="57" height="58"><a class="navbar-brand d-flex align-items-center" href="#"><span style="margin-left: 13px;">CoffeeLy</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navcol-1" *ngIf="isLogged$; else elseBlock">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item"><a class="nav-link active" (click)="inicio()">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" (click)="perfil()">{{username}}</a></li>
+                <li class="nav-item"></li>
+            </ul><button class="btn me-3" type="button" (click)="cerrar()">Salir</button>
+        </div>
+        <ng-template #elseBlock>
+            <div class="collapse navbar-collapse" id="navcol-1" #elseBlock>
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"></li>
+                </ul><button class="btn me-3" type="button" (click)="login()">Iniciar sesión</button>
+            </div>
+        </ng-template>
+    </div>
+</nav>

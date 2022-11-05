@@ -1,0 +1,68 @@
+<header>
+    <app-nav-finca></app-nav-finca>
+</header>
+
+<div class="contenedor">
+    <h1 class="titulo">Fermentación </h1>
+    <div class="contenedor-2"> 
+        <div class="formulario">
+            <form (ngSubmit)="submit()" class="card-fermentacion" [formGroup]="fermentacionForm">
+                <div class="form-group">
+                    <label for="inputDate1">Fecha 1</label>  
+                    <input type="datetime-local" id="inputDate1" formControlName="fechaInicio">
+                </div>    
+                <div class="form-group">
+                    <label for="inputDate2">Fecha 2</label>  
+                    <input type="datetime-local" id="inputDate2" formControlName="fechaFinal">
+                </div>
+                <div class="form-group">
+                    <label for="inputMucilago">Mucilago</label>
+                    <input type="number" step="any" min="0" placeholder="0 (kg)" id="inputMucilago" formControlName="cantidadEntra">
+                </div> 
+                <div class="form-group">
+                    <label for="inputFermentado">Fermentado</label>
+                    <input type="number" step="any" min="0" placeholder="0 (kg)" id="inputFermentado" formControlName="cantidadSale">
+                </div> 
+                <div class="form-group">
+                    <label for="inputTamb">Temp. Ambiente</label>
+                    <input type="number" step="any" min="0" placeholder="20 (°C)" id="inputTamb" formControlName="tempAmb">
+                </div>
+                <div class="form-group">
+                    <label for="inputGrano">Temp. Grano</label>
+                    <input type="number" step="any" min="0" placeholder="100 (°C)" id="inputGrano" formControlName="tempGrano">
+                </div>
+                <div class="form-group">
+                    <label for="inputBrix"> ° Brix</label>
+                    <input type="number" step="any" min="0" placeholder="25°" id="inputBrix" formControlName="brix">
+                </div>
+                <div class="form-group">
+                    <label for="inputpH"> pH</label>
+                    <input type="number" step="any" min="0.00001" max="14" placeholder="1-14" id="inputpH" formControlName="ph">
+                </div>
+                <div class="form-group">
+                    <label for="inputAgua"> Agua </label>
+                    <input type="number" step="any" min="0" placeholder="0 (L)" id="inputAgua" formControlName="cantidadAgua">
+                </div>
+                <div class="form-group">
+                    <label for="inputTipo"> Tipo</label>
+                    <select class="opciones"  (change)="changeTipo($event)" formControlName="tipo">
+                        <option value="">Elija un tipo</option>
+                        <option *ngFor="let tipo of Tipos" [ngValue]="tipo">
+                            {{ tipo }}
+                        </option>
+                    </select>
+                </div> 
+                <div class="form-group">
+                    <label for="inputMaquina"> Máquina </label>
+                    <input type="text" placeholder="Marca, Modelo" id="inputMaquina" formControlName="maquina">
+                </div>
+                <div class="form-group">
+                    <img src="../../../../assets/info.png" class="info" (click)="info()">
+                </div>
+            </form>
+            <div class="submit-group">
+                <input type="submit" [disabled]="!fermentacionForm.valid" value="Ingresar">
+            </div>
+        </div>
+    </div>  
+</div>

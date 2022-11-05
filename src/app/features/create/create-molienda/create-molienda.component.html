@@ -1,0 +1,52 @@
+<header>
+    <app-nav-finca></app-nav-finca>
+</header>
+
+<div class="contenedor">
+    <h1 class="titulo">Molienda</h1>
+    <div class="contenedor-2"> 
+        <div class="card-info"> 
+            <p>Fecha 1: Es la fecha y hora a la que empieza la molienda del lote. </p>
+            <p>Fecha 2: Es la fecha y hora a la que finaliza la molienda del lote. </p>
+            <p>Entrada: Masa de pergamino seco que entra a la molienda, medida en kg. </p>
+            <p>Salida: Masa de verde trillado obtenido tras molienda, medida en kg. </p>
+            <p>Cisco: Masa de cisco obtenido tras molienda, medida en kg. </p>
+            <p>Factor: Factor de rendimiento calculado por el operario de la molienda. </p>
+        </div>
+        <form class="card-secado" (ngSubmit)="submit()" [formGroup]="moliendaForm">
+            <div class="form-group">
+                <label for="inputDate1">Fecha 1</label>  
+                <input type="datetime-local" id="inputDate1" formControlName="fechaInicio">
+            </div>    
+            <div class="form-group">
+                <label for="inputDate2">Fecha 2</label>  
+                <input type="datetime-local" id="inputDate2" formControlName="fechaFinal">
+            </div>
+            <div class="form-group">
+                <label for="inputEntrada">Entrada</label>
+                <input type="number" step="any" min="0" placeholder="0 (kg)" id="inputEntrada" formControlName="cantidadEntra">
+            </div> 
+            <div class="form-group">
+                <label for="inputSalida">Salida</label>
+                <input type="number" step="any" min="0" placeholder="0 (kg)" id="inputSalida" formControlName="cantidadSale">
+            </div>
+            <div class="form-group">
+                <label for="inputCisco">Cisco</label>
+                <input type="number" step="any" min="0" placeholder="0 (kg)" id="inputCisco" formControlName="cisco">
+            </div>
+            <div class="form-group">
+                <label for="inputCisco">Factor</label>
+                <input type="number" step="any" min="0" max="1" placeholder="0-1" id="inputFactor" formControlName="Factor">
+            </div>
+            <div class="form-group">
+                <label for="inputMaquina">Maquina</label>
+                <input type="text" step="any"placeholder="Marca, Modelo" id="inputMaquina" formControlName="maquina"> 
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Ingresar">
+            </div>
+        </form>
+    </div>
+        
+</div>
