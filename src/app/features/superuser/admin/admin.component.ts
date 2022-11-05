@@ -189,7 +189,7 @@ export class AdminComponent implements OnInit {
       document.body.appendChild(a);
       a.href = url;
       var dateDay = new Date();
-      a.download = dateDay.getDate().toString() + "-" + (dateDay.getMonth()+1).toString() + "-" + dateDay.getFullYear().toString() + "_moliendas";
+      a.download = dateDay.getDate().toString() + "-" + (dateDay.getMonth()+1).toString() + "-" + dateDay.getFullYear().toString() + "_trillas";
       a.click();
       })
   }
