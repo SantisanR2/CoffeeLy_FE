@@ -8,6 +8,9 @@ import { RestService } from '../services/rest.service';
 })
 export class AdminComponent implements OnInit {
 
+  public csv = "../../../../assets/csv.png";
+  public sembrar = "../../../../assets/sembrar.png";
+
   constructor(private RestService: RestService) { }
 
   ngOnInit(): void {
