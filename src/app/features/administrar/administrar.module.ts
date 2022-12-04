@@ -8,11 +8,13 @@ import { RestService } from './services/rest.service';
 import { AdministrarRoutingModule } from './administrar-routing.module';
 import { AdministrarOperariosComponent } from './administrar-operarios/administrar-operarios.component';
 import { NavEmpresaModule } from 'src/app/shared/nav-empresa/nav-empresa.module';
+import { AdministrarMaquinasComponent } from './administrar-maquinas/administrar-maquinas.component';
 
 @NgModule({
   declarations: [
     AdministrarRecolectoresComponent,
-    AdministrarOperariosComponent
+    AdministrarOperariosComponent,
+    AdministrarMaquinasComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +24,9 @@ import { NavEmpresaModule } from 'src/app/shared/nav-empresa/nav-empresa.module'
     AdministrarRoutingModule
   ],
   exports: [
-    AdministrarRecolectoresComponent
+    AdministrarRecolectoresComponent,
+    AdministrarMaquinasComponent,
+    AdministrarOperariosComponent
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

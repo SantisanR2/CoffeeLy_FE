@@ -13,6 +13,7 @@ import { CreateMoliendaComponent } from "./create-molienda/create-molienda.compo
 import { CreateSeleccionComponent } from "./create-seleccion/create-seleccion.component";
 import { CreateTostionComponent } from "./create-tostion/create-tostion.component";
 import { CreateCatacionComponent } from "./create-catacion/create-catacion.component";
+import { CreateMaquinaComponent } from "./create-maquina/create-maquina.component";
 
 const routes: Routes = [
     {
@@ -66,9 +67,15 @@ const routes: Routes = [
     {
         path:'catacion',
         component: CreateCatacionComponent,
+    },
+    {
+        path:'maquina',
+        component: CreateMaquinaComponent,
     }
-
-
+    {
+        path:'maquina/edit',
+        component: CreateMaquinaComponent,
+    }
 ];
 
 @NgModule({

@@ -18,6 +18,10 @@ import { CreateMoliendaComponent } from './create-molienda/create-molienda.compo
 import { CreateSeleccionComponent } from './create-seleccion/create-seleccion.component';
 import { CreateTostionComponent } from './create-tostion/create-tostion.component';
 import { CreateCatacionComponent } from './create-catacion/create-catacion.component';
+import { CreateMaquinaComponent } from './create-maquina/create-maquina.component';
+import { NavEmpresaComponent } from 'src/app/shared/nav-empresa/nav-empresa/nav-empresa.component';
+import { NavEmpresaModule } from 'src/app/shared/nav-empresa/nav-empresa.module';
+import { EditComponent } from './create-maquina/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +37,9 @@ import { CreateCatacionComponent } from './create-catacion/create-catacion.compo
     CreateMoliendaComponent,
     CreateSeleccionComponent,
     CreateTostionComponent,
-    CreateCatacionComponent
+    CreateCatacionComponent,
+    CreateMaquinaComponent,
+    EditComponent
   ],
   imports: [
     CommonModule,
@@ -41,6 +47,7 @@ import { CreateCatacionComponent } from './create-catacion/create-catacion.compo
     NavFincaModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NavEmpresaModule,
   ],
   exports: [
     CreateSiembraComponent,

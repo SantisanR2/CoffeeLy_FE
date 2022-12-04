@@ -44,7 +44,7 @@ export class NavEmpresaComponent implements OnInit {
   }
 
   administrarMaquinas() {
-    this.router.navigate(['#']);
+    this.router.navigate(['administrar/maquinas']);
   }
 
   administrarOperarios() {
