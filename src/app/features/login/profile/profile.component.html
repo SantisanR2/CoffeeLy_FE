@@ -1,33 +1,35 @@
-<header *ngIf="isFinca$; else elseBlock">
-    <app-nav-finca></app-nav-finca>
-</header>
-<ng-template #elseBlock>
-    <app-nav-empresa></app-nav-empresa>
-</ng-template>
-<div class="profile">
-    <div class="container">
-        <div class="info-card">
-            <img src={{url_img}} alt="">
-            <div class="informacion">
-                <span class="titulo">Información</span>
-                <ul class="info-list">
-                    <li class="item">
-                        <span>Nombre: {{user.name}}</span>
-                    </li>
-                    <li class="item">
-                        <span>CC: {{user.cedula}}</span>
-                    </li>
-                    <li class="item">
-                        <span>Celular: {{user.celular}}</span>
-                    </li>
-                    <li class="item">
-                        <span>Correo: {{user.correo}}</span>
-                    </li>
-                    <li class="item">
-                        <span>Rol: {{rol}}</span>
-                    </li>
-                </ul>
+<body>
+    <header *ngIf="isFinca$; else elseBlock">
+        <app-nav-finca></app-nav-finca>
+    </header>
+    <ng-template #elseBlock>
+        <app-nav-empresa></app-nav-empresa>
+    </ng-template>
+    <div class="profile">
+        <div class="contenedor">
+            <div class="info-card">
+                <img src={{url_img}} alt="">
+                <div class="informacion">
+                    <span class="titulo">Información</span>
+                    <ul class="info-list">
+                        <li class="item">
+                            <span>Nombre: {{user.name}}</span>
+                        </li>
+                        <li class="item">
+                            <span>CC: {{user.cedula}}</span>
+                        </li>
+                        <li class="item">
+                            <span>Celular: {{user.celular}}</span>
+                        </li>
+                        <li class="item">
+                            <span>Correo: {{user.correo}}</span>
+                        </li>
+                        <li class="item">
+                            <span>Rol: {{rol}}</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</body>

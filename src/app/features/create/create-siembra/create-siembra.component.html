@@ -1,46 +1,48 @@
-<header>
-    <app-nav-finca></app-nav-finca>
-</header>
-
-<div class="contenedor">
-    <h1 class="titulo"> Nuevo lote </h1>
-    <div class="contenedor-2"> 
-        <div class="card-info"> 
-            <p>Fecha: es la fecha y hora a la que empieza la siembra del lote. <p>
-            <p>Distancia: es la distancia que se deja entre las semillas a la hora de sembrar, medida en metros. </p>
-            <p>Profundidad: es la profundidad a la que se siembran las semillas, medida en cm. </p>
-            <p>Inclinación: es el ángulo que se le buscará dar al cultivo, medida en grados. <p>
-            <p>El tipo de semilla se refiere a la variedad de café a sembrar. </p>
-        </div>
-        <form (ngSubmit)="submit()" class="card-siembra" [formGroup]="siembraForm">
-            <div class="form-group">
-                <label for="inputDate">Fecha</label>  
-                <input type="datetime-local" id="inputDate" formControlName="fecha">
-            </div>    
-            <div class="form-group">
-                <label for="inputDistancia">Distancia</label>
-                <input type="number" step="any" min="0" placeholder="Distancia (m)" id="inputDistancia" formControlName="distancia">
-            </div> 
-            <div class="form-group">
-                <label for="inputProfundidad">Profundidad</label>
-                <input type="number" step="any" min="0" placeholder="Profundidad (cm)" id="inputProfundidad" formControlName="profundidad">
-            </div> 
-            <div class="form-group">
-                <label for="inputInclinación">Inclinación</label>
-                <input type="number" step="any" min="0" max="90" placeholder="Inclinación (°)" id="inputInclinación" formControlName="inclinacion">
-            </div> 
-            <div class="form-group">
-                <select (change)="changeSemilla($event)" formControlName="semilla">
-                    <option value="">Elija un tipo de semilla</option>
-                    <option *ngFor="let semilla of Semillas" [ngValue]="semilla">
-                        {{ semilla }}
-                    </option>
-                </select>
-            </div> 
-            <div class="form-group">
-                <input type="submit" [disabled]="!siembraForm.valid" value="Ingresar">
+<body>
+    <header>
+        <app-nav-finca></app-nav-finca>
+    </header>
+    
+    <div class="contenedor">
+        <h1 class="titulo"> Nuevo lote </h1>
+        <div class="contenedor-2"> 
+            <div class="card-info"> 
+                <p>Fecha: es la fecha y hora a la que empieza la siembra del lote. <p>
+                <p>Distancia: es la distancia que se deja entre las semillas a la hora de sembrar, medida en metros. </p>
+                <p>Profundidad: es la profundidad a la que se siembran las semillas, medida en cm. </p>
+                <p>Inclinación: es el ángulo que se le buscará dar al cultivo, medida en grados. <p>
+                <p>El tipo de semilla se refiere a la variedad de café a sembrar. </p>
             </div>
-        </form>
+            <form (ngSubmit)="submit()" class="card-siembra" [formGroup]="siembraForm">
+                <div class="form-group">
+                    <label for="inputDate">Fecha</label>  
+                    <input type="datetime-local" id="inputDate" formControlName="fecha">
+                </div>    
+                <div class="form-group">
+                    <label for="inputDistancia">Distancia</label>
+                    <input type="number" step="any" min="0" placeholder="Distancia (m)" id="inputDistancia" formControlName="distancia">
+                </div> 
+                <div class="form-group">
+                    <label for="inputProfundidad">Profundidad</label>
+                    <input type="number" step="any" min="0" placeholder="Profundidad (cm)" id="inputProfundidad" formControlName="profundidad">
+                </div> 
+                <div class="form-group">
+                    <label for="inputInclinación">Inclinación</label>
+                    <input type="number" step="any" min="0" max="90" placeholder="Inclinación (°)" id="inputInclinación" formControlName="inclinacion">
+                </div> 
+                <div class="form-group">
+                    <select (change)="changeSemilla($event)" formControlName="semilla">
+                        <option value="">Elija un tipo de semilla</option>
+                        <option *ngFor="let semilla of Semillas" [ngValue]="semilla">
+                            {{ semilla }}
+                        </option>
+                    </select>
+                </div> 
+                <div class="form-group">
+                    <input type="submit" [disabled]="!siembraForm.valid" value="Ingresar">
+                </div>
+            </form>
+        </div>
+            
     </div>
-        
-</div>
+</body>

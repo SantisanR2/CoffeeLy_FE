@@ -5,7 +5,11 @@
     font-size: x-large;
     color: var(--coffeLy-font);
     font-family: Basker;
-    min-height: calc(100vh - 11.6vh);
+}
+
+body {
+    height: 100vh;
+    background-color: var(--coffeLy);
 }
 
 .informacion {

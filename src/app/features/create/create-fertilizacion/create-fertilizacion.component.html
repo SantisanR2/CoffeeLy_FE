@@ -1,27 +1,28 @@
-<header>
-    <app-nav-finca></app-nav-finca>
-</header>
-
-<div class="contenedor">
-    <h1 class="titulo"> Fertilización </h1>
-    <div class="contenedor-2"> 
-        <div class="card-info"> 
-            <p>Fecha: es la fecha y hora a la que empieza la fertilización del lote. <p>
-            <p>Relación: es la relación entre la masa de fertilizante natural y artifical utilizado. </p>
-        </div>
-        <form (ngSubmit)="submit()" [formGroup]="fertilizacionForm" class="card-fertilizacion">
-        <div class="fecha">
-            <label for="inputDate">Fecha  </label>  
-            <input type="datetime-local" id="inputDate" formControlName="fecha">
-        </div>
-        <div class="relacion">
-            <label for="inputRelation1">Relación  </label>  
-            <input type="number" step="0.1" min="0" max="1" placeholder="Número entre 0-1" id="inputRelation" formControlName="relacion">
-        </div>
-        <div class="boton">
-            <input type="submit" [disabled]="!fertilizacionForm.valid" value="Ingresar">
-        </div>
-        </form>
-    </div>
+<body>
+    <header>
+        <app-nav-finca></app-nav-finca>
+    </header>
     
-</div>
+    <div class="contenedor">
+        <h1 class="titulo"> Fertilización </h1>
+        <div class="contenedor-2"> 
+            <div class="card-info"> 
+                <p>Fecha: es la fecha y hora a la que empieza la fertilización del lote. <p>
+                <p>Relación: es la relación entre la masa de fertilizante natural y artifical utilizado. </p>
+            </div>
+            <form (ngSubmit)="submit()" [formGroup]="fertilizacionForm" class="card-fertilizacion">
+            <div class="fecha">
+                <label for="inputDate">Fecha  </label>  
+                <input type="datetime-local" id="inputDate" formControlName="fecha">
+            </div>
+            <div class="relacion">
+                <label for="inputRelation1">Relación  </label>  
+                <input type="number" step="0.1" min="0" max="1" placeholder="Número entre 0-1" id="inputRelation" formControlName="relacion">
+            </div>
+            <div class="boton">
+                <input type="submit" [disabled]="!fertilizacionForm.valid" value="Ingresar">
+            </div>
+            </form>
+        </div>
+    </div>
+</body>

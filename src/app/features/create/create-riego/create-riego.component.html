@@ -1,26 +1,28 @@
-<header>
-    <app-nav-finca></app-nav-finca>
-</header>
-
-<div class="contenedor">
-    <h1 class="titulo"> Riego </h1>
-    <div class="contenedor-2">
-        <div class="card-info"> 
-            <p>Fecha: es la fecha y hora a la que empieza el riego del lote. <p>
-            <p>Agua usada: es la cantidad de agua empleada en el riego, medida en litros. <p>
+<body>
+    <header>
+        <app-nav-finca></app-nav-finca>
+    </header>
+    
+    <div class="contenedor">
+        <h1 class="titulo"> Riego </h1>
+        <div class="contenedor-2">
+            <div class="card-info"> 
+                <p>Fecha: es la fecha y hora a la que empieza el riego del lote. <p>
+                <p>Agua usada: es la cantidad de agua empleada en el riego, medida en litros. <p>
+            </div>
+            <form  (ngSubmit)="submit()" [formGroup]="riegoForm" class="card-riego">
+                <div class="fecha">
+                    <label for="inputDate">Fecha</label>  
+                    <input type="datetime-local" id="inputDate" formControlName="fecha">
+                </div>
+                <div class="agua">
+                    <label for="inputWater">Agua usada</label>  
+                    <input type="number" step="1" min="0" placeholder="en Litros" id="inputWater" formControlName="agua">
+                </div>
+                <div class="boton">
+                    <input type="submit" [disabled]="!riegoForm.valid" value="Ingresar">
+                </div>
+            </form>
         </div>
-        <form  (ngSubmit)="submit()" [formGroup]="riegoForm" class="card-riego">
-            <div class="fecha">
-                <label for="inputDate">Fecha</label>  
-                <input type="datetime-local" id="inputDate" formControlName="fecha">
-            </div>
-            <div class="agua">
-                <label for="inputWater">Agua usada</label>  
-                <input type="number" step="1" min="0" placeholder="en Litros" id="inputWater" formControlName="agua">
-            </div>
-            <div class="boton">
-                <input type="submit" [disabled]="!riegoForm.valid" value="Ingresar">
-            </div>
-        </form>
     </div>
-</div>
+</body>

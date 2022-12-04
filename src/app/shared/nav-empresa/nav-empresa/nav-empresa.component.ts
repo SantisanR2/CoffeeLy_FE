@@ -38,4 +38,12 @@ export class NavEmpresaComponent implements OnInit {
   perfil(){
     this.router.navigate(['login/profile']);
   }
+
+  administrarFincas() {
+    this.router.navigate(['#']);
+  }
+
+  administrarMaquinas() {
+    this.router.navigate(['#']);
+  }
 }

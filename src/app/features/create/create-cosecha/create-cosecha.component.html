@@ -1,33 +1,35 @@
-<header>
-    <app-nav-finca></app-nav-finca>
-</header>
-<div class="contenedor">
-    <h1 class="titulo"> Cosecha </h1>
-    <div class="contenedor-2">
-
-    <div class="card-info">
-        <p>Fecha: es la fecha y hora a la que empieza la cosecha del lote. <p>
-        <p>Defectos: es la masa de granos de café defectuosos y desechados, medido en kilogramos (kg). </p>
-        <p>Masa total: masa de granos de café defectuosos y aceptados, medido en kilogramos (kg). </p>
+<body>
+    <header>
+        <app-nav-finca></app-nav-finca>
+    </header>
+    <div class="contenedor">
+        <h1 class="titulo"> Cosecha </h1>
+        <div class="contenedor-2">
+    
+        <div class="card-info">
+            <p>Fecha: es la fecha y hora a la que empieza la cosecha del lote. <p>
+            <p>Defectos: es la masa de granos de café defectuosos y desechados, medido en kilogramos (kg). </p>
+            <p>Masa total: masa de granos de café defectuosos y aceptados, medido en kilogramos (kg). </p>
+        </div>
+    
+        <form (ngSubmit)="submit()" class="card-cosecha" [formGroup]="cosechaForm">
+            <div class="form-group">
+                <label for="inputDate">Fecha</label>  
+                <input type="datetime-local" id="inputDate" formControlName="fecha">
+            </div>    
+            <div class="form-group">
+                <label for="inputDefectos">Defectos</label>
+                <input type="number" step="any" min="0" placeholder="Peso (kg)" id="inputDefectos" formControlName="defectos">
+            </div> 
+            <div class="form-group">
+                <label for="inputMasa">Masa total</label>
+                <input type="number" step="any" min="0" placeholder="Peso (kg)" id="inputMasa" formControlName="cantidad">
+            </div> 
+            <div class="form-group">
+                <input type="submit" [disabled]="!cosechaForm.valid" value="Ingresar">
+            </div>    
+        </form>
+        </div>
     </div>
-
-    <form (ngSubmit)="submit()" class="card-cosecha" [formGroup]="cosechaForm">
-        <div class="form-group">
-            <label for="inputDate">Fecha</label>  
-            <input type="datetime-local" id="inputDate" formControlName="fecha">
-        </div>    
-        <div class="form-group">
-            <label for="inputDefectos">Defectos</label>
-            <input type="number" step="any" min="0" placeholder="Peso (kg)" id="inputDefectos" formControlName="defectos">
-        </div> 
-        <div class="form-group">
-            <label for="inputMasa">Masa total</label>
-            <input type="number" step="any" min="0" placeholder="Peso (kg)" id="inputMasa" formControlName="cantidad">
-        </div> 
-        <div class="form-group">
-            <input type="submit" [disabled]="!cosechaForm.valid" value="Ingresar">
-        </div>    
-    </form>
-    </div>
-</div>
+</body>
 

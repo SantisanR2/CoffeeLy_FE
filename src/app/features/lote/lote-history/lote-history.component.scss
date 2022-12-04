@@ -158,6 +158,10 @@ h3{
 
 @media only screen and (max-width: 700px) {
 
+.table-todo {
+    flex-direction: column;
+}
+
 .botones{
     display: flex;
     flex-direction: column;

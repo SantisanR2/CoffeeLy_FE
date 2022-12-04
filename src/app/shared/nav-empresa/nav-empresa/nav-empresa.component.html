@@ -3,9 +3,10 @@
         <div class="collapse navbar-collapse" id="navcol-1" *ngIf="isAdmin; else elseBlock">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item"><a class="nav-link active" href="{{inicioPath}}">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" >Administrar recolectores</a></li>
+                <li class="nav-item"><a class="nav-link" (click)="administrarFincas()">Administrar fincas</a></li>
+                <li class="nav-item"><a class="nav-link" (click)="administrarMaquinas()">Administrar maquinas</a></li>
                 <li class="nav-item"><a class="nav-link" (click)="perfil()">{{username}}</a></li>
-            </ul><button class="btn me-3" type="button" >Salir</button>
+            </ul><button class="btn me-3" type="button" (click)="cerrar()">Salir</button>
         </div>
         <ng-template #elseBlock>
             <div class="collapse navbar-collapse" id="navcol-1" #elseBlock>

@@ -11,6 +11,11 @@
     gap: 5vh;
 }
 
+body {
+    height: 100vh;
+    background-color: var(--coffeLy);
+}
+
 .titulo{
     background-size: cover;
     font-family: Basker;
@@ -109,12 +114,14 @@ form input{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 30vh;
-        width: 50vw;
+        height: auto;
+        width: auto;
         min-width: 300px;
         gap: 30px;
         background-color: rgba(148, 148, 148, 0.2);
         color: #C29F42;
     }
+
+    input {width: 200px;}
 
   }

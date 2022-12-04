@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
 
-  public isFinca$ = localStorage.getItem("role") === "1" || "2";
+  public isFinca$:boolean = false;
 
   public user:any;
   public url_img = '';
@@ -33,6 +33,9 @@ export class ProfileComponent implements OnInit {
     } else if(localStorage.getItem("role") == '4') {
       this.url_img = '../../assets/administrador maquinas 2.png';
       this.rol = 'Administrador de la empresa';
+    }
+    if (localStorage.getItem("role") == '1' || localStorage.getItem("role") == '2') {
+      this.isFinca$ = true;
     }
   }
 }
