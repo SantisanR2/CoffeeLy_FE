@@ -8,18 +8,22 @@ import { NavFincaModule } from 'src/app/shared/nav-finca/nav-finca.module';
 import { InicioEmpresaComponent } from './inicio-empresa/inicio-empresa.component';
 import { NavEmpresaModule } from 'src/app/shared/nav-empresa/nav-empresa.module';
 import { InterceptorInterceptor } from 'src/app/interceptor/interceptor.interceptor';
+import { FilterByFincaPipe } from 'src/app/pipes/filter-by-finca.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     InicioFincaComponent,
-    InicioEmpresaComponent
+    InicioEmpresaComponent,
+    FilterByFincaPipe
   ],
   imports: [
     CommonModule,
     InicioRoutingModule,
     HttpClientModule, 
     NavFincaModule,
-    NavEmpresaModule
+    NavEmpresaModule,
+    FormsModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

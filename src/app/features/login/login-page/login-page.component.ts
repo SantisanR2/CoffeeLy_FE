@@ -40,6 +40,7 @@ export class LoginPageComponent implements OnInit {
   }
 
   completedLogIn(data: any) {
+    console.log(data)
     this.storageService.setStorageItem({key: "isAuth", value: "true", storageArea: "localStorage" });
     this.storageService.setStorageItem({key: "username", value: data.name, storageArea: "localStorage" });
     this.storageService.setStorageItem({key: "token_access", value: data.access, storageArea: "localStorage" });
@@ -47,7 +48,11 @@ export class LoginPageComponent implements OnInit {
     this.storageService.setStorageItem({key: "user_id", value: data.id, storageArea: "localStorage" });
     this.storageService.setStorageItem({key: "role", value: data.role, storageArea: "localStorage" }); 
 
-    if(data.role == 1 || data.role == 2)
+    if(data.is_superuser) 
+    {
+      this.router.navigate(['/superuser/admin']);
+    }
+    else if(data.role == 1 || data.role == 2)
     {
       this.storageService.setStorageItem({key: "finca", value: data.finca, storageArea: "localStorage" });
       this.router.navigate(['/inicio/finca']).then(this.refresh); 

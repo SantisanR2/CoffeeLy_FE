@@ -3,6 +3,7 @@ import { RestService } from '../services/rest.service';
 import { StorageService } from 'src/app/core/storage.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { Finca } from 'src/app/entities/finca';
 
 @Component({
   selector: 'app-inicio-empresa',
@@ -19,8 +20,14 @@ export class InicioEmpresaComponent implements OnInit {
 
   public user:any;
 
+  public show = true;
+
   private id_lote = localStorage.getItem("lote");
   private url_deleteLote = '/lote/delete?id=';
+  private url_fincas = '/finca/All';
+  public finca_id = '0';
+  public seleccionado:Finca;
+  public lista:Finca[]|any=[];
 
   constructor(private RestService:RestService,  private storageService: StorageService, private router: Router) { }
 
@@ -31,6 +38,14 @@ export class InicioEmpresaComponent implements OnInit {
       this.user = respuesta;
       this.cargarlotes(vistaLotes);
     } )
+    this.seleccionado?this.finca_id=this.seleccionado.id.toString():this.finca_id='0';
+    this.cargarFincas();
+  }
+
+  reload() {
+    this.seleccionado?this.finca_id=this.seleccionado.id.toString():this.finca_id='0';
+    this.show = false;
+    setTimeout(() => this.show = true);
   }
 
   cargarlotes(ruta:string)
@@ -38,6 +53,15 @@ export class InicioEmpresaComponent implements OnInit {
     this.RestService.get(ruta)
     .subscribe(respuesta => {
       this.respuesta = respuesta;
+    } )
+  }
+
+  cargarFincas() {
+    this.RestService.get(this.url_fincas)
+    .subscribe(lista => {
+      this.lista = lista;
+      let todas:Finca = new Finca(0, 'Todas', '', 0, '', 0, 0, '', '', 0, '', '');
+      this.lista.unshift(todas);
     } )
   }
 
