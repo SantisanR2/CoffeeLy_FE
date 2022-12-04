@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class SignUpPageComponent implements OnInit {
 
-  public isFinca$ = localStorage.getItem("role") === "1" || "2";
+  public isFinca$ = false;
 
   registerForm = this.fb.group({
     name: ['', Validators.required],
@@ -27,6 +27,9 @@ export class SignUpPageComponent implements OnInit {
   constructor(private loginService: LoginServicesService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
+    if (localStorage.getItem("role") == '2'|| localStorage.getItem("role") == '1') {
+      this.isFinca$ = true;
+    }
   }
 
   submit(){
@@ -46,6 +49,8 @@ export class SignUpPageComponent implements OnInit {
     data.append("correo", this.registerForm.controls['correo'].value);
     if(localStorage.getItem("role") == '2') {
       data.append("finca", localStorage.getItem("finca") as string);
+    } else if (localStorage.getItem('isCreatingFinca') == 'true') {
+      data.append("finca", localStorage.getItem("idFincaCreating") as string);
     }
     data.append("cedula", this.registerForm.controls['cedula'].value);
     data.append("celular", this.registerForm.controls['celular'].value);
@@ -54,6 +59,9 @@ export class SignUpPageComponent implements OnInit {
       data.append("role", "1");
     } else if (localStorage.getItem("role") == '4') {
       data.append("role", "3");
+    }
+    else if (localStorage.getItem("role") == '4' && localStorage.getItem('isCreatingFinca') == 'true') {
+      data.append("role", "2");
     }
     this.loginService.register(data).subscribe( (data: any) =>  this.completedLogIn(data),
     (error: any) => {                              
