@@ -4,6 +4,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { StorageService } from 'src/app/core/storage.service';
 import { RestService } from '../services/rest.service';
+import { Maquina } from 'src/app/entities/maquina';
 
 @Component({
   selector: 'app-create-fermentacion',
@@ -13,10 +14,12 @@ import { RestService } from '../services/rest.service';
 export class CreateFermentacionComponent implements OnInit {
 
   private url_createFermentacion = '/fermentacion/';
+  private url_maquinas = '/maquina/All';
   private url_viewLote = "/lote/";
   private url_updateLote = "/lote/update/";
   private id_lote = localStorage.getItem("lote");
 
+  public lista:Maquina[]|any=[];
 
   Tipos: any = ['Anaeróbica','Microorganismos','Maceración carbónica'];
 
@@ -41,21 +44,15 @@ export class CreateFermentacionComponent implements OnInit {
   constructor(private RestService: RestService, private fb: FormBuilder, private storageService: StorageService, private router: Router) { }
 
   ngOnInit(): void {
-
-
+    this.RestService.get(this.url_maquinas)
+    .subscribe(lista => {
+      this.lista = lista;
+    } )
   }
 
-
-  changeTipo(e: any) {
-    this.Tipos?.setValue(e.target.value, {
-      onlySelf: true,
-    });
+  revisar() {
+    console.log(this.fermentacionForm.value);
   }
-
-  get tipo() {
-    return this.fermentacionForm.get('tipo');
-  }
-
 
   info(){
     Swal.fire({
@@ -82,7 +79,6 @@ export class CreateFermentacionComponent implements OnInit {
 
   submit() {
     this.crearFermentacion();
-    this.router.navigate(['inicio/empresa']);
   }
 
   crearFermentacion() {
@@ -98,7 +94,7 @@ export class CreateFermentacionComponent implements OnInit {
     this.RestService.get(this.url_viewLote + this.id_lote)
     .subscribe( (data: any) => {
       console.log(data);
-      data.estado = "fermentación";
+      data.estado = "Fermentado";
       this.RestService.post(this.url_updateLote + this.id_lote, data)
       .subscribe( (resp: any) => {
         const Toast = Swal.mixin({

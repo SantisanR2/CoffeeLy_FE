@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: 'create', loadChildren: () => import('./features/create/create.module').then(m => m.CreateModule), canActivate: [GuardGuard]},
   { path: 'lote', loadChildren: () => import('./features/lote/lote.module').then(m => m.LoteModule), canActivate: [GuardGuard]},
   { path: 'administrar', loadChildren: () => import('./features/administrar/administrar.module').then(m => m.AdministrarModule), canActivate: [GuardGuard]},
-  { path: 'superuser', loadChildren: () => import('./features/superuser/superuser.module').then(m => m.SuperuserModule), canActivate: [GuardGuard]}
+  { path: 'superuser', loadChildren: () => import('./features/superuser/superuser.module').then(m => m.SuperuserModule), canActivate: [GuardGuard]},
+  { path: 'carga', loadChildren: () => import('./features/carga-archivos/carga-archivos.module').then(m => m.CargaArchivosModule), canActivate: [GuardGuard]}
 ];
 
 @NgModule({

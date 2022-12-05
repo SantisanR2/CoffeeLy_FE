@@ -34,8 +34,10 @@
                 <input type="number" step="any" min="0" placeholder="0 (L)" id="inputAgua" formControlName="cantidadAgua">
             </div>
             <div class="form-group">
-                <label for="inputMaquina">Maquina</label>
-                <input type="text" step="any"placeholder="Marca, Modelo" id="inputMaquina" formControlName="maquina"> 
+                <label for="inputMaquina">Máquina</label>
+                <select name="miselect" id="inputMaquina" formControlName="maquina">
+                    <option [ngValue]="objeto.id" *ngFor="let objeto of lista">{{objeto.marca}}-{{objeto.modelo}} #{{objeto.id}}</option>
+                </select>
             </div>
 
             <div class="form-group">

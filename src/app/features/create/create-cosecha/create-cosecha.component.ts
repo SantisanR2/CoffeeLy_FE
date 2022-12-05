@@ -50,7 +50,8 @@ export class CreateCosechaComponent implements OnInit {
     this.RestService.get(this.url_viewLote + this.id_lote)
     .subscribe( (data: any) => {
       console.log(data);
-      data.estado = "cosechado";
+      data.estado = "Cosechado";
+      data.estaCosechado = true;
       this.RestService.post(this.url_updateLote + this.id_lote, data)
       .subscribe( (resp: any) => {
         const Toast = Swal.mixin({

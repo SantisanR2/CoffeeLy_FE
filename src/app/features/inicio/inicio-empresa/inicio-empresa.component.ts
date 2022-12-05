@@ -27,6 +27,7 @@ export class InicioEmpresaComponent implements OnInit {
   private url_fincas = '/finca/All';
   public finca_id = '0';
   public seleccionado:Finca;
+  public estaCosechado:boolean = false;
   public lista:Finca[]|any=[];
 
   constructor(private RestService:RestService,  private storageService: StorageService, private router: Router) { }
@@ -136,6 +137,40 @@ export class InicioEmpresaComponent implements OnInit {
 
   nuevo() {
     this.router.navigate(['create/siembra']).then(this.refresh);
+  }
+
+  continuar(estado:string, id:string) {
+    estado = estado.toLowerCase();
+    if(estado == 'cosechado')
+    {
+      localStorage.setItem("lote", id);
+      this.router.navigate(['create/despulpado']).then(this.refresh);
+    } else if (estado == 'despulpado') {
+      localStorage.setItem("lote", id);
+      this.router.navigate(['create/lavado']).then(this.refresh);
+    } else if (estado == 'lavado') {
+      localStorage.setItem("lote", id);
+      this.router.navigate(['create/fermentacion']).then(this.refresh);
+    } else if (estado == 'fermentado') {
+      localStorage.setItem("lote", id);
+      this.router.navigate(['create/secado']).then(this.refresh);
+    } else if (estado == 'secado') {
+      localStorage.setItem("lote", id);
+      this.router.navigate(['create/molienda']).then(this.refresh);
+    } else if (estado == 'trillado') {
+      localStorage.setItem("lote", id);
+      this.router.navigate(['create/seleccion']).then(this.refresh);
+    } else if (estado == 'seleccionado') {
+      localStorage.setItem("lote", id);
+      this.router.navigate(['create/tostion']).then(this.refresh);
+    } else if (estado == 'tostado') {
+      localStorage.setItem("lote", id);
+      this.router.navigate(['create/catacion']).then(this.refresh);
+    }
+  }
+
+  cambio(is:boolean) {
+    this.estaCosechado = is;
   }
 
 }

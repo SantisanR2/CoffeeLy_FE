@@ -1,91 +1,97 @@
-<div class="container" >
-    <div class="container-titulo">
-        <h1 class="titulo">Generación de archivos .CSV</h1>
+<body>
+    <header>
+        <app-nav-empresa></app-nav-empresa>
+    </header>
+    <div class="container" >
+        <div class="container-titulo">
+            <h1 class="titulo">Generación de archivos .CSV</h1>
+        </div>
+        <div class="container-buttons">
+            <h2 class="subtitulo"> Finca </h2>
+            <div class="container-finca">
+                <button class="button" alt="Descargar siembras" (click)="siembra()">
+                    <img src={{csv}} alt="CSV.png">
+                    <div class="polaroid"> Siembras </div>
+                </button>
+                <button class="button" alt="Descargar fertilizaciones" (click)="fertilizacion()">
+                    <img src={{csv}} alt="CSV.png"> 
+                    <div class="polaroid"> Fertilizaciones </div>
+                </button>
+                <button class="button" alt="Descargar riegos" (click)="riego()">
+                    <img src={{csv}} alt="CSV.png"> 
+                    <div class="polaroid"> Riegos </div>
+                </button>
+                <button class="button" alt="Descargar podas" (click)="poda()">
+                    <img src={{csv}} alt="CSV.png"> 
+                    <div class="polaroid"> Podas </div>
+                </button>
+                <button class="button" alt="Descargar cosechas" (click)="cosecha()">
+                    <img src={{csv}} alt="CSV.png"> 
+                    <div class="polaroid"> Cosechas </div>
+                </button>
+            </div>
+    
+            <h2 class="subtitulo"> Empresa Parte 1</h2>
+            <div class="container-empresa">
+                <button class="button" alt="Descargar despulpados" (click)="despulpado()">
+                    <img src={{csv}} alt="CSV.png"> 
+                    <div class="polaroid"> Despulpados </div>
+                </button>
+                <button class="button" alt="Descargar lavados" (click)="lavado()">
+                    <img src={{csv}} alt="CSV.png"> 
+                    <div class="polaroid"> Lavados </div>
+                </button>
+                <button class="button" alt="Descargar fermentaciones" (click)="fermentacion()">
+                    <img src={{csv}} alt="CSV.png"> 
+                    <div class="polaroid"> Fermentaciones </div>
+                </button>
+                <button class="button" alt="Descargar secados" (click)="secado()">
+                    <img src={{csv}} alt="CSV.png"> 
+                    <div class="polaroid"> Secados </div>
+                </button>
+            </div>
+    
+            <h2 class="subtitulo"> Empresa Parte 2</h2>
+    
+            <div class="container-empresa">
+                <button class="button" alt="Descargar trillas" (click)="molienda()">
+                    <img src={{csv}} alt="CSV.png"> 
+                    <div class="polaroid"> Trilla </div>
+                </button>
+                <button class="button" alt="Descargar selecciones" (click)="seleccion()">
+                    <img src={{csv}} alt="CSV.png"> 
+                    <div class="polaroid"> Selecciones </div>
+                </button>
+                <button class="button" alt="Descargar tostiones" (click)="tostion()">
+                    <img src={{csv}} alt="CSV.png"> 
+                    <div class="polaroid"> Tostiones </div>
+                </button>
+                <button class="button" alt="Descargar cataciones">
+                    <img src={{csv}} alt="CSV.png"> 
+                    <div class="polaroid"> Cataciones </div>
+                </button>
+            </div>
+    
+            <h2 class="subtitulo"> Administrativo </h2>
+            <div class="container-entes">
+                <button class="button" alt="Descargar lotes" (click)="lote()">   
+                    <img src={{csv}} alt="CSV.png"> 
+                    <div class="polaroid"> Lotes </div>
+                </button>
+                <button class="button" alt="Descargar máquinas" (click)="maquina()">
+                    <img src={{csv}} alt="CSV.png"> 
+                    <div class="polaroid"> Máquinas </div>
+                </button>
+                <button class="button" alt="Descargar usuarios" (click)="user()">
+                    <img src={{csv}} alt="CSV.png"> 
+                    <div class="polaroid"> Usuarios </div>
+                </button>
+                <button class="button" alt="Descargar fincas" (click)="finca()">
+                    <img src={{csv}} alt="CSV.png"> 
+                    <div class="polaroid"> Fincas </div>
+                </button>
+            </div>
+        </div>
     </div>
-    <div class="container-buttons">
-        <h2 class="subtitulo"> Finca </h2>
-        <div class="container-finca">
-            <button class="button" alt="Descargar siembras" (click)="siembra()">
-                <img src={{csv}} alt="CSV.png">
-                <div class="polaroid"> Siembras </div>
-            </button>
-            <button class="button" alt="Descargar fertilizaciones" (click)="fertilizacion()">
-                <img src={{csv}} alt="CSV.png"> 
-                <div class="polaroid"> Fertilizaciones </div>
-            </button>
-            <button class="button" alt="Descargar riegos" (click)="riego()">
-                <img src={{csv}} alt="CSV.png"> 
-                <div class="polaroid"> Riegos </div>
-            </button>
-            <button class="button" alt="Descargar podas" (click)="poda()">
-                <img src={{csv}} alt="CSV.png"> 
-                <div class="polaroid"> Podas </div>
-            </button>
-            <button class="button" alt="Descargar cosechas" (click)="cosecha()">
-                <img src={{csv}} alt="CSV.png"> 
-                <div class="polaroid"> Cosechas </div>
-            </button>
-        </div>
-
-        <h2 class="subtitulo"> Empresa Parte 1</h2>
-        <div class="container-empresa">
-            <button class="button" alt="Descargar despulpados" (click)="despulpado()">
-                <img src={{csv}} alt="CSV.png"> 
-                <div class="polaroid"> Despulpados </div>
-            </button>
-            <button class="button" alt="Descargar lavados" (click)="lavado()">
-                <img src={{csv}} alt="CSV.png"> 
-                <div class="polaroid"> Lavados </div>
-            </button>
-            <button class="button" alt="Descargar fermentaciones" (click)="fermentacion()">
-                <img src={{csv}} alt="CSV.png"> 
-                <div class="polaroid"> Fermentaciones </div>
-            </button>
-            <button class="button" alt="Descargar secados" (click)="secado()">
-                <img src={{csv}} alt="CSV.png"> 
-                <div class="polaroid"> Secados </div>
-            </button>
-        </div>
-
-        <h2 class="subtitulo"> Empresa Parte 2</h2>
-
-        <div class="container-empresa">
-            <button class="button" alt="Descargar trillas" (click)="molienda()">
-                <img src={{csv}} alt="CSV.png"> 
-                <div class="polaroid"> Trilla </div>
-            </button>
-            <button class="button" alt="Descargar selecciones" (click)="seleccion()">
-                <img src={{csv}} alt="CSV.png"> 
-                <div class="polaroid"> Selecciones </div>
-            </button>
-            <button class="button" alt="Descargar tostiones" (click)="tostion()">
-                <img src={{csv}} alt="CSV.png"> 
-                <div class="polaroid"> Tostiones </div>
-            </button>
-            <button class="button" alt="Descargar cataciones">
-                <img src={{csv}} alt="CSV.png"> 
-                <div class="polaroid"> Cataciones </div>
-            </button>
-        </div>
-
-        <h2 class="subtitulo"> Administrativo </h2>
-        <div class="container-entes">
-            <button class="button" alt="Descargar lotes" (click)="lote()">   
-                <img src={{csv}} alt="CSV.png"> 
-                <div class="polaroid"> Lotes </div>
-            </button>
-            <button class="button" alt="Descargar máquinas" (click)="maquina()">
-                <img src={{csv}} alt="CSV.png"> 
-                <div class="polaroid"> Máquinas </div>
-            </button>
-            <button class="button" alt="Descargar usuarios" (click)="user()">
-                <img src={{csv}} alt="CSV.png"> 
-                <div class="polaroid"> Usuarios </div>
-            </button>
-            <button class="button" alt="Descargar fincas" (click)="finca()">
-                <img src={{csv}} alt="CSV.png"> 
-                <div class="polaroid"> Fincas </div>
-            </button>
-        </div>
-    </div>
-</div>
+    
+</body>

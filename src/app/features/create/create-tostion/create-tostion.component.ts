@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { RestService } from '../services/rest.service';
+import { Maquina } from 'src/app/entities/maquina';
 
 @Component({
   selector: 'app-create-tostion',
@@ -12,14 +13,18 @@ import { RestService } from '../services/rest.service';
 export class CreateTostionComponent implements OnInit {
 
   private url_createTostion = '/tostion/';
+  private url_maquinas = '/maquina/All';
   private url_viewLote = "/lote/";
   private url_updateLote = "/lote/update/";
   private id_lote = localStorage.getItem("lote");
-  
+
+    public lista:Maquina[]|any=[]; 
+
   tostionForm = this.fb.group({
     fecha: new FormControl('' ,[Validators.required]),
     cantidadEntra: new FormControl('' ,[Validators.required]),
     cantidadSale: new FormControl('' ,[Validators.required]),
+    tempInicio: new FormControl('' ,[Validators.required]),
     tiempo1: new FormControl('' ,[Validators.required]),
     temp1: new FormControl('' ,[Validators.required]),
     tiempo2: new FormControl('' ,[Validators.required]),
@@ -27,6 +32,7 @@ export class CreateTostionComponent implements OnInit {
     tiempoPromedio: new FormControl('' ,[Validators.required]),
     tempPromedio: new FormControl('' ,[Validators.required]),
     aromas: new FormControl('' ,[Validators.required]),
+    agtron: new FormControl('' ,[Validators.required]),
     tipo: new FormControl('' ,[Validators.required]),
     curva: new FormControl('' ,[Validators.required]),
     maquina: new FormControl('' ,[Validators.required]),
@@ -38,6 +44,10 @@ export class CreateTostionComponent implements OnInit {
   constructor(private RestService: RestService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
+    this.RestService.get(this.url_maquinas)
+    .subscribe(lista => {
+      this.lista = lista;
+    } )
   }
 
   info(){
@@ -85,7 +95,7 @@ export class CreateTostionComponent implements OnInit {
     this.RestService.get(this.url_viewLote + this.id_lote)
     .subscribe( (data: any) => {
       console.log(data);
-      data.estado = "tostión";
+      data.estado = "Tostado";
       this.RestService.post(this.url_updateLote + this.id_lote, data)
       .subscribe( (resp: any) => {
         const Toast = Swal.mixin({

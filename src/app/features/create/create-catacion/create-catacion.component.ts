@@ -51,7 +51,7 @@ export class CreateCatacionComponent implements OnInit {
     this.RestService.get(this.url_viewLote + this.id_lote)
     .subscribe( (data: any) => {
       console.log(data);
-      data.estado = "catación";
+      data.estado = "Catado";
       this.RestService.post(this.url_updateLote + this.id_lote, data)
       .subscribe( (resp: any) => {
         const Toast = Swal.mixin({
