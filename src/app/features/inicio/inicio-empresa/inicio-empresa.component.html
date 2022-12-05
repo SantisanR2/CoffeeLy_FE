@@ -4,9 +4,9 @@
 <div style="background: #282726;min-height: 100%;" class="inicio">
     <h1 class="text-center" style="color: #C29F42;margin-bottom: 18px;font-weight: bold;padding-top: 18px;font-family: basker;">LOTES</h1>
 
-    <div style="display: flex;flex-direction: row;align-items: center;margin-left: 50px;margin-bottom: 15px;">
+    <div style="display: flex;flex-direction: row;align-items: center;margin-left: 3vw;margin-bottom: 15px;">
         <span>Filtrar por finca:</span>
-        <p style="width: 300px; margin-left: 20px;">
+        <p style="width: 300px; margin-left: 1vw;">
             <select name="miselect" [(ngModel)]="seleccionado" (change)="reload()" style="background-color: #A6A7A3; color: #000000;">
             <option [ngValue]="objeto" *ngFor="let objeto of lista">{{objeto.nombre}}</option>
             </select>
