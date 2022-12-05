@@ -5,27 +5,28 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-administrar-maquinas',
-  templateUrl: './administrar-maquinas.component.html',
-  styleUrls: ['./administrar-maquinas.component.scss']
+  selector: 'app-administrar-fincas',
+  templateUrl: './administrar-fincas.component.html',
+  styleUrls: ['./administrar-fincas.component.scss']
 })
-export class AdministrarMaquinasComponent implements OnInit {
+export class AdministrarFincasComponent implements OnInit {
+
   public deleteLogoPath = '../../assets/deleteLogo.png';
   public respuesta:any;
-  public maquina:any;
+  public finca:any;
 
   constructor(private RestService:RestService,  private storageService: StorageService, private router: Router) { }
 
   ngOnInit(): void {
-    this.RestService.get_token('/maquina/All', localStorage.getItem("token_access") as string)
+    this.RestService.get_token('/finca/All', localStorage.getItem("token_access") as string)
     .subscribe(respuesta => {
       this.respuesta = respuesta;
       console.log(respuesta);
-      this.maquina = this.cargarMaquinas('/maquina/All');
+      this.finca = this.cargarFincas('/finca/All');
     } )
   }
 
-  cargarMaquinas(ruta:string)
+  cargarFincas(ruta:string)
   {
     this.RestService.get(ruta)
     .subscribe(respuesta => {
@@ -34,13 +35,13 @@ export class AdministrarMaquinasComponent implements OnInit {
   }
 
   nuevo(){
-    this.router.navigate(['create/maquina']).then(this.refresh); 
+    this.router.navigate(['create/finca']).then(this.refresh); 
   }
 
   edit(id:string)
   {
-    this.storageService.setStorageItem({key: "maquina", value: id, storageArea: "localStorage" });
-    this.router.navigate(['create/maquina/edit']).then(this.refresh);  
+    this.storageService.setStorageItem({key: "finca", value: id, storageArea: "localStorage" });
+    this.router.navigate(['create/finca/edit']).then(this.refresh);  
   }
 
   delete(id:string)
@@ -105,8 +106,9 @@ export class AdministrarMaquinasComponent implements OnInit {
   }
 
   borrar(id:string) {
-    this.RestService.delete('/maquina/delete?id= ' + id)
+    this.RestService.delete('/finca/delete?id= ' + id)
     .subscribe(respuesta => {
     } )
   }
+
 }

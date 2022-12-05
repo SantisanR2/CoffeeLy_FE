@@ -35,7 +35,6 @@ export class LoteEditComponent implements OnInit {
   updateLote() {
     this.RestService.get(this.url_viewLote + this.id_lote)
     .subscribe( (data: any) => {
-      console.log(data);
       data.cantidad = this.loteForm.get('cantidad')?.value;
       this.RestService.post(this.url_updateLote + this.id_lote, data)
       .subscribe( (resp: any) => {

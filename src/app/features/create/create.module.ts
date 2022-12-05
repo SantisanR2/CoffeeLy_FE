@@ -22,6 +22,8 @@ import { CreateMaquinaComponent } from './create-maquina/create-maquina.componen
 import { NavEmpresaComponent } from 'src/app/shared/nav-empresa/nav-empresa/nav-empresa.component';
 import { NavEmpresaModule } from 'src/app/shared/nav-empresa/nav-empresa.module';
 import { EditComponent } from './create-maquina/edit/edit.component';
+import { CreateFincaComponent } from './create-finca/create-finca.component';
+import { EditfComponent } from './create-finca/editf/editf.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { EditComponent } from './create-maquina/edit/edit.component';
     CreateTostionComponent,
     CreateCatacionComponent,
     CreateMaquinaComponent,
-    EditComponent
+    EditComponent,
+    CreateFincaComponent,
+    EditfComponent,
   ],
   imports: [
     CommonModule,
