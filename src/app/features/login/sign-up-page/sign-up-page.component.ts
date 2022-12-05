@@ -63,6 +63,7 @@ export class SignUpPageComponent implements OnInit {
     else if (localStorage.getItem("role") == '4' && localStorage.getItem('isCreatingFinca') == 'true') {
       data.append("role", "2");
     }
+    console.log(data.get)
     this.loginService.register(data).subscribe( (data: any) =>  this.completedLogIn(data),
     (error: any) => {                              
       console.error('error caught in component', error)

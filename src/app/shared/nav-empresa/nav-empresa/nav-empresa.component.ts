@@ -40,7 +40,7 @@ export class NavEmpresaComponent implements OnInit {
   }
 
   administrarFincas() {
-    this.router.navigate(['#']);
+    this.router.navigate(['administrar/fincas']);
   }
 
   administrarMaquinas() {

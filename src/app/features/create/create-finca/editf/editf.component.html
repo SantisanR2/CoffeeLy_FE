@@ -1,0 +1,68 @@
+<app-nav-empresa></app-nav-empresa>
+<div class="container"> 
+    <div>
+        <h1 class="titulo" >Modificación de finca</h1>
+    </div>
+    <form (ngSubmit)="submit()" class="card-finca" [formGroup]="fincaForm">
+        <div class="forms">
+            <div class="form-group">
+                <label for="inputNombre">Nombre</label>
+                <input type="text" placeholder="" id="inputNombre"  formControlName="nombre">
+            </div> 
+            <div class="form-group juntos">
+                <div class="form-group">
+                    <label for="inputUbicacion">Ubicación</label>
+                    <input type="text" placeholder="Vereda/Muncipio/Departamento" id="inputUbicacion" formControlName="ubicacion">
+                </div> 
+                <div class="form-group">
+                    <label for="inputAltitud">Altitud</label>
+                    <input type="number" min="0" placeholder="2000 m.s.n.m" id="inputAltitud" formControlName="altitud">
+                </div> 
+            </div>
+            <div class="form-group juntos">
+                <div class="form-group">
+                    <label for="inputClima">Clima</label>
+                    <input type="text" placeholder="" id="inputClima" formControlName="clima">
+                </div> 
+                <div class="form-group">
+                    <label for="inputInclinacion">Inclinación</label>
+                    <input type="text" placeholder="" id="inputInclinacion" formControlName="inclinacion">
+                </div> 
+            </div>
+            <div class="form-group juntos">
+                <div class="form-group">
+                    <label for="inputLumenes">Lumenes</label>
+                    <input type="number" placeholder="400" id="inputLumenes" formControlName="lumenes">
+                </div> 
+                <div class="form-group">
+                    <label for="inputCoordenadas">Coordenadas</label>
+                    <input type="text" min="0" placeholder="2000 m.s.n.m" id="inputCoordenadas" formControlName="coordenadas">
+                </div> 
+            </div>
+            <div class="form-group juntos">
+                <div class="form-group">
+                    <label for="inputTierra">Tierra</label>
+                    <input type="text" placeholder="" id="inputTierra" formControlName="tierra">
+                </div> 
+                <div class="form-group">
+                    <label for="inputph">pH</label>
+                    <input type="text" placeholder="" id="inputph" formControlName="ph">
+                </div> 
+            </div>
+            <div class="form-group juntos">
+                <div class="form-group">
+                    <label for="inputCultivos">Cultivos</label>
+                    <input type="text" placeholder=""  id="inputCultivos" formControlName="cultivos">
+                </div> 
+                <div class="form-group">
+                    <label for="inputMicroorganismos">Microorganismos</label>
+                    <input type="text" placeholder="" id="inputMicroorganismos" formControlName="microorganismos">
+                </div> 
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Ingresar">
+            </div>   
+        </div>
+    </form>
+</div>
+

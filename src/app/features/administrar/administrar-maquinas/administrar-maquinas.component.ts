@@ -40,7 +40,7 @@ export class AdministrarMaquinasComponent implements OnInit {
   edit(id:string)
   {
     this.storageService.setStorageItem({key: "maquina", value: id, storageArea: "localStorage" });
-    this.router.navigate(['create/maquina']).then(this.refresh);  
+    this.router.navigate(['create/maquina/edit']).then(this.refresh);  
   }
 
   delete(id:string)

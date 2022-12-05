@@ -14,6 +14,9 @@ import { CreateSeleccionComponent } from "./create-seleccion/create-seleccion.co
 import { CreateTostionComponent } from "./create-tostion/create-tostion.component";
 import { CreateCatacionComponent } from "./create-catacion/create-catacion.component";
 import { CreateMaquinaComponent } from "./create-maquina/create-maquina.component";
+import { EditComponent } from "./create-maquina/edit/edit.component";
+import { CreateFincaComponent } from "./create-finca/create-finca.component";
+import { EditfComponent } from "./create-finca/editf/editf.component";
 
 const routes: Routes = [
     {
@@ -71,11 +74,20 @@ const routes: Routes = [
     {
         path:'maquina',
         component: CreateMaquinaComponent,
-    }
+    },
     {
         path:'maquina/edit',
-        component: CreateMaquinaComponent,
+        component: EditComponent,
+    },
+    {
+        path:'finca',
+        component: CreateFincaComponent,
+    },
+    {
+        path:'finca/edit',
+        component: EditfComponent,
     }
+
 ];
 
 @NgModule({

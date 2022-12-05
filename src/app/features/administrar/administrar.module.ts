@@ -9,12 +9,14 @@ import { AdministrarRoutingModule } from './administrar-routing.module';
 import { AdministrarOperariosComponent } from './administrar-operarios/administrar-operarios.component';
 import { NavEmpresaModule } from 'src/app/shared/nav-empresa/nav-empresa.module';
 import { AdministrarMaquinasComponent } from './administrar-maquinas/administrar-maquinas.component';
+import { AdministrarFincasComponent } from './administrar-fincas/administrar-fincas.component';
 
 @NgModule({
   declarations: [
     AdministrarRecolectoresComponent,
     AdministrarOperariosComponent,
-    AdministrarMaquinasComponent
+    AdministrarMaquinasComponent,
+    AdministrarFincasComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +28,8 @@ import { AdministrarMaquinasComponent } from './administrar-maquinas/administrar
   exports: [
     AdministrarRecolectoresComponent,
     AdministrarMaquinasComponent,
-    AdministrarOperariosComponent
+    AdministrarOperariosComponent,
+    AdministrarFincasComponent
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
