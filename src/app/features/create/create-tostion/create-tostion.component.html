@@ -59,7 +59,7 @@
                 </div>
                 <div class="form-group">
                     <label for="inputCurva"> Curva </label>
-                    <input type="file" accept="image/*,.pdf" id="inputCurva" formControlName="curva">
+                    <input type="file" accept="image/*,.pdf" id="inputCurva" formControlName="curva" (change)="onChange($event)">
                 </div>
                 <div class="form-group">
                     <label for="inputMaquina"> Máquina </label>

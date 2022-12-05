@@ -18,7 +18,9 @@ export class CreateTostionComponent implements OnInit {
   private url_updateLote = "/lote/update/";
   private id_lote = localStorage.getItem("lote");
 
-    public lista:Maquina[]|any=[]; 
+  file: File | any = null;
+
+  public lista:Maquina[]|any=[]; 
 
   tostionForm = this.fb.group({
     fecha: new FormControl('' ,[Validators.required]),
@@ -33,7 +35,6 @@ export class CreateTostionComponent implements OnInit {
     tempPromedio: new FormControl('' ,[Validators.required]),
     aromas: new FormControl('' ,[Validators.required]),
     agtron: new FormControl('' ,[Validators.required]),
-    tipo: new FormControl('' ,[Validators.required]),
     curva: new FormControl('' ,[Validators.required]),
     maquina: new FormControl('' ,[Validators.required]),
     lote: new FormControl(),
@@ -79,16 +80,46 @@ export class CreateTostionComponent implements OnInit {
 
   submit() {
     this.crearTostion();
-    this.router.navigate(['inicio/empresa']);
+    //this.router.navigate(['inicio/empresa']);
   }
 
   crearTostion() {
-    this.tostionForm.get('lote')?.setValue(Number(this.id_lote));
-    this.tostionForm.get('user')?.setValue(Number(localStorage.getItem('user_id')));
-    this.RestService.post(this.url_createTostion, this.tostionForm.value)
+
+    const data : FormData = new FormData();
+    data.append("fecha", this.tostionForm.controls['fecha'].value);
+    data.append("cantidadEntra", this.tostionForm.controls['cantidadEntra'].value);
+    data.append("cantidadSale", this.tostionForm.controls['cantidadSale'].value);
+    data.append("tempInicio", this.tostionForm.controls['tempInicio'].value);
+    data.append("tiempo1", this.tostionForm.controls['tiempo1'].value);
+    data.append("temp1", this.tostionForm.controls['temp1'].value);
+    data.append("tiempo2", this.tostionForm.controls['tiempo2'].value);
+    data.append("temp2", this.tostionForm.controls['temp2'].value);
+    data.append("tiempoPromedio", this.tostionForm.controls['tiempoPromedio'].value);
+    data.append("tempPromedio", this.tostionForm.controls['tempPromedio'].value);
+    data.append("aromas", this.tostionForm.controls['aromas'].value);
+    data.append("agtron", this.tostionForm.controls['agtron'].value);
+    data.append("curva", this.file);
+    data.append("maquina", this.tostionForm.controls['maquina'].value);
+    data.append("lote", this.id_lote as string);
+    data.append("user", localStorage.getItem("user") as string);
+
+
+
+    //this.tostionForm.get('lote')?.setValue(Number(this.id_lote));
+    //this.tostionForm.get('user')?.setValue(Number(localStorage.getItem('user_id')));
+    //const formData = new FormData();
+    //formData.append("curva", this.file, this.file.name);
+    console.log(data)
+    //this.tostionForm.get('curva')?.setValue(this.file);
+
+    this.RestService.post(this.url_createTostion, data)
     .subscribe( (data: any) => {
     } )
-    this.updateLote();
+    //this.updateLote();
+  }
+
+  onChange(event:any) {
+    this.file = event.target.files[0];
   }
 
   updateLote() {
