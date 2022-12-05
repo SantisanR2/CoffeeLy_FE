@@ -7,13 +7,17 @@ import { LoteRoutingModule } from './lote-routing.module';
 import { NavFincaModule } from 'src/app/shared/nav-finca/nav-finca.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoteEmpresaComponent } from './lote-history/lote-empresa/lote-empresa.component';
+import { NavEmpresaComponent } from 'src/app/shared/nav-empresa/nav-empresa/nav-empresa.component';
+import { NavEmpresaModule } from 'src/app/shared/nav-empresa/nav-empresa.module';
 
 
 
 @NgModule({
   declarations: [
     LoteEditComponent,
-    LoteHistoryComponent
+    LoteHistoryComponent,
+    LoteEmpresaComponent
   ],
   imports: [
     CommonModule,
@@ -21,6 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavFincaModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NavEmpresaModule,
   ],
   exports: [
     LoteEditComponent,

@@ -69,7 +69,7 @@ export class InicioEmpresaComponent implements OnInit {
   detail(id:string)
   {
     this.storageService.setStorageItem({key: "lote", value: id, storageArea: "localStorage" });
-    this.router.navigate(['lote/history']).then(this.refresh);  
+    this.router.navigate(['lote/empresa']).then(this.refresh);  
   }
 
   edit(id:string)

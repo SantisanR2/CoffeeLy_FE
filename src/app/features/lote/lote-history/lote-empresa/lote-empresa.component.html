@@ -1,0 +1,170 @@
+<header>
+    <app-nav-empresa> </app-nav-empresa>
+</header>
+
+<div class="contenedor">
+    <div class="container-titulo">
+        <h1 class="text-center" style="color: #C29F42;margin-bottom: 18px;font-weight: bold;padding-top: 18px;font-family: basker;"> Historial y modificación del lote # {{id_lote}} </h1>
+    </div>
+
+    <div class="siembra"> 
+        <h3>El lote fue sembrado el día {{fechaSiembra}}</h3> 
+        <h3>El lote es de variedad: <span>{{variedad}}</span></h3> 
+    </div>
+    
+    
+    <div class="table-todo">
+        <div class="tablas"> 
+            <h3> Podas </h3>
+            <ul class="poda"> 
+                <li class="item-first">
+                    <span> Fecha </span>  <span> </span>      
+                        <li class="item" *ngFor="let poda of podas"> 
+                            <span>{{poda.fecha}}</span>
+                        </li>
+            </ul>
+        </div>
+
+        <div class="tablas">
+            <h3> Riegos </h3>
+            <ul class="riego">
+                <li class="item-first">
+                    <span>Fecha</span><span> Agua (L)</span>
+                    <li class="item" *ngFor="let riego of riegos">
+                        <span> {{riego.fecha}} </span>
+                        <span> {{riego.agua}} </span>
+                </li>  
+            </ul>
+        </div>
+       
+        <div class="tablas"> 
+            <h3> Fertilizaciones </h3>
+            <ul class="fertilizacion"> 
+                <li class="item-first">
+                    <span>Fecha </span><span>Relación</span> 
+                        <li class="item" *ngFor="let fertilizacion of fertilizaciones">
+                            <span> {{fertilizacion.fecha}} </span>
+                            <span> {{fertilizacion.relacion}} </span>
+            </ul>
+        </div>
+        
+    </div>
+
+    <div class="siembra"> 
+        <h3>El lote fue cosechado el día {{fechaCosecha}}</h3> 
+        <h3>El lote tenía un peso de: <span>{{cosechado}}</span> kg</h3> 
+    </div>
+
+
+    <div class="table-todo">
+        <div class="tablas"> 
+            <h3> Despulpado </h3>
+            <ul class="despulpado"> 
+                <li class="item-first">
+                    <span> Fecha 1 </span>  <span> Fecha 2 </span> <span> Agua (L) </span>    
+                        <li class="item" *ngFor="let despulpado of despulpados"> 
+                            <span>{{despulpado.fechaInicio}}</span>
+                            <span>{{despulpado.fechaFinal}}</span>
+                            <span> {{despulpado.cantidadAgua}}</span>
+                        </li>
+            </ul>
+        </div>
+
+        <div class="tablas">
+            <h3> Lavado </h3>
+            <ul class="lavado">
+                <li class="item-first">
+                <span> Fecha 1 </span> <span> Fecha 2 </span> <span> Agua (L) </span>
+                    <li class="item" *ngFor="let lavado of lavados">
+                        <span> {{lavado.fechaInicio}} </span>
+                        <span> {{lavado.fechaFinal}} </span>
+                        <span> {{lavado.cantidadAgua}}</span>
+                </li>  
+            </ul>
+        </div>
+       
+
+        
+    </div>
+
+
+    <div class="table-todo">
+        <div class="tablas"> 
+            <h3> Fermentación </h3>
+            <ul class="fermentacion"> 
+                <li class="item-first">
+                    <span>Fecha 1 </span><span>Fecha 2</span> <span> Tipo </span>
+                        <li class="item" *ngFor="let fermentacion of fermentaciones">
+                            <span> {{fermentacion.fechaInicio}} </span>  
+                            <span> {{fermentacion.fechaFinal}} </span>
+                            <span> {{fermentacion.tipo}} </span>
+            </ul>
+        </div>
+        <div class="tablas"> 
+            <h3> Secado </h3>
+            <ul class="secado"> 
+                <li class="item-first">
+                    <span>Fecha 1 </span><span>Fecha 2</span> <span> T Grano (°C) </span>
+                        <li class="item" *ngFor="let secado of secados">
+                            <span> {{secado.fechaInicio}} </span>  
+                            <span> {{secado.fechaFinal}} </span>
+                            <span> {{secado.tempGrano}}</span>
+            </ul>
+        </div>
+    </div>
+
+    <div class="table-todo">
+        <div class="tablas"> 
+            <h3> Trilla </h3>
+            <ul class="molienda"> 
+                <li class="item-first">
+                    <span>Fecha 1 </span><span>Fecha 2</span> <span> Salida (kg) </span>
+                        <li class="item" *ngFor="let molienda of moliendas">
+                            <span> {{molienda.fechaInicio}} </span>
+                            <span> {{molienda.fechaFinal}} </span>
+                            <span> {{molienda.cantidadSale}}</span>
+            </ul>
+        </div>
+        <div class="tablas"> 
+            <h3> Selección </h3>
+            <ul class="seleccion"> 
+                <li class="item-first">
+                    <span>Fecha </span><span>Defectos (kg) </span> <span> Salida (kg) </span>
+                        <li class="item" *ngFor="let seleccion of selecciones">
+                            <span> {{seleccion.fecha}} </span>
+                            <span> {{seleccion.defectuosos}} </span>  
+                            <span> {{seleccion.cantidadSale}} </span>
+
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="table-todo">
+        <div class="tablas"> 
+            <h3> Tostión </h3>
+            <ul class="tostion"> 
+                <li class="item-first">
+                    <span>Fecha </span><span>Entrada (kg )</span> <span> Salida (kg) </span>
+                        <li class="item" *ngFor="let tostion of tostiones">
+                            <span> {{tostion.fecha}} </span>
+                            <span> {{tostion.cantidadEntra}} </span>
+                            <span> {{tostion.cantidadSale}} </span>
+            </ul>
+        </div>
+        <div class="tablas"> 
+            <h3> Catación </h3>
+            <ul class="catacion"> 
+                <li class="item-first">
+                    <span>Fecha </span> <span>Puntaje SCA </span>
+                        <li class="item" *ngFor="let catacion of cataciones">
+                            <span> {{catacion.fecha}} </span>  
+                            <span> {{catacion.puntaje}} </span>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+
+
