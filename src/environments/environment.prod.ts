@@ -1,4 +1,4 @@
 export const environment = {
-  production: true,
-  app: "https://regiscafe-remote-be.herokuapp.com"
+  production: false,
+  app: "http://127.0.0.1:8000"
 };

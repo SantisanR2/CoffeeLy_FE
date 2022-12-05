@@ -14,28 +14,30 @@
         </div>
         <form class="card-lavado" (ngSubmit)="submit()" [formGroup]="lavadoForm">
             <div class="form-group">
-                <label for="inputDate1">Fecha 1</label>  
-                <input type="datetime-local" id="inputDate1" formControlName="fecha1">
+                <label for="inputFechaInicio">Fecha inicial</label>  
+                <input type="datetime-local" id="inputFechaInicio" formControlName="fechaInicio">
             </div>    
             <div class="form-group">
-                <label for="inputDate2">Fecha 2</label>  
-                <input type="datetime-local" id="inputDate2" formControlName="fecha2">
+                <label for="inputFechaFinal">Fecha final</label>  
+                <input type="datetime-local" id="inputFechaFinal" formControlName="fechaFinal">
             </div>
             <div class="form-group">
-                <label for="inputMucilago1">Mucilago 1</label>
-                <input type="number" step="any" min="0" placeholder="0 (kg)" id="inputMucilago1" formControlName="mucilago1">
+                <label for="inputCantidadEntra">Cantidad entrante</label>
+                <input type="number" step="any" min="0" placeholder="0 (kg)" id="inputCantidadEntra" formControlName="cantidadEntra">
             </div> 
             <div class="form-group">
-                <label for="inputMucilago2">Mucilago 2</label>
-                <input type="number" step="any" min="0" placeholder="0 (kg)" id="inputMucilago2" formControlName="mucilago2">
+                <label for="inputCantidadSale">Cantidad saliente</label>
+                <input type="number" step="any" min="0" placeholder="0 (kg)" id="inputCantidadSale" formControlName="cantidadSale">
             </div> 
             <div class="form-group">
-                <label for="inputaGUA">Agua</label>
-                <input type="number" step="any" min="0" placeholder="0 (L)" id="inputAgua" formControlName="agua">
+                <label for="inputCantidadAgua">Cantidad de agua</label>
+                <input type="number" step="any" min="0" placeholder="0 (L)" id="inputCantidadAgua" formControlName="cantidadAgua">
             </div>
             <div class="form-group">
                 <label for="inputMaquina">Maquina</label>
-                <input type="text" step="any"placeholder="Marca, Modelo" id="inputMaquina" formControlName="maquina"> 
+                <select name="miselect" id="inputMaquina" formControlName="maquina">
+                    <option [ngValue]="objeto.id" *ngFor="let objeto of lista">{{objeto.marca}}-{{objeto.modelo}} #{{objeto.id}}</option>
+                </select>
             </div>
             
             <div class="form-group">

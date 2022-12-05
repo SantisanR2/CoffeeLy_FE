@@ -18,6 +18,7 @@ export class EditComponent implements OnInit {
     modelo: new FormControl('' ,[Validators.required]),
   });
 
+
   constructor(private RestService: RestService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {

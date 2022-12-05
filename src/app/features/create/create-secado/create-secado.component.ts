@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { RestService } from '../services/rest.service';
+import { Maquina } from 'src/app/entities/maquina';
 
 @Component({
   selector: 'app-create-secado',
@@ -12,9 +13,12 @@ import { RestService } from '../services/rest.service';
 export class CreateSecadoComponent implements OnInit {
 
   private url_createSecado = '/secado/';
+  private url_maquinas = '/maquina/All';
   private url_viewLote = "/lote/";
   private url_updateLote = "/lote/update/";
   private id_lote = localStorage.getItem("lote");
+  
+  public lista:Maquina[]|any=[];
   
   secadoForm = this.fb.group({
     fechaInicio: new FormControl('' ,[Validators.required]),
@@ -32,6 +36,10 @@ export class CreateSecadoComponent implements OnInit {
   constructor(private RestService: RestService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
+    this.RestService.get(this.url_maquinas)
+    .subscribe(lista => {
+      this.lista = lista;
+    } )
   }
   
   submit() {
@@ -51,8 +59,7 @@ export class CreateSecadoComponent implements OnInit {
   updateLote() {
     this.RestService.get(this.url_viewLote + this.id_lote)
     .subscribe( (data: any) => {
-      console.log(data);
-      data.estado = "secado";
+      data.estado = "Secado";
       this.RestService.post(this.url_updateLote + this.id_lote, data)
       .subscribe( (resp: any) => {
         const Toast = Swal.mixin({

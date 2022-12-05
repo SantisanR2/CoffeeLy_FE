@@ -71,7 +71,7 @@ const routes: Routes = [
     {
         path:'maquina',
         component: CreateMaquinaComponent,
-    }
+    },
     {
         path:'maquina/edit',
         component: CreateMaquinaComponent,

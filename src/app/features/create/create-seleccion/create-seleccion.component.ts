@@ -20,7 +20,8 @@ export class CreateSeleccionComponent implements OnInit {
     fecha: new FormControl('' ,[Validators.required]),
     cantidadEntra: new FormControl('' ,[Validators.required]),
     cantidadSale: new FormControl('' ,[Validators.required]),
-    defectuoso: new FormControl('' ,[Validators.required]),
+    defectuosos: new FormControl('' ,[Validators.required]),
+    defectos: new FormControl('' ,[Validators.required]),
     lote: new FormControl(),
     user: new FormControl(),
   });
@@ -49,7 +50,7 @@ export class CreateSeleccionComponent implements OnInit {
     this.RestService.get(this.url_viewLote + this.id_lote)
     .subscribe( (data: any) => {
       console.log(data);
-      data.estado = "selección";
+      data.estado = "Seleccionado";
       this.RestService.post(this.url_updateLote + this.id_lote, data)
       .subscribe( (resp: any) => {
         const Toast = Swal.mixin({

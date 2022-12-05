@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { RestService } from '../services/rest.service';
+import { Maquina } from 'src/app/entities/maquina';
 
 @Component({
   selector: 'app-create-lavado',
@@ -12,16 +13,19 @@ import { RestService } from '../services/rest.service';
 export class CreateLavadoComponent implements OnInit {
 
   private url_createLavado = '/lavado/';
+  private url_maquinas = '/maquina/All';
   private url_viewLote = "/lote/";
   private url_updateLote = "/lote/update/";
   private id_lote = localStorage.getItem("lote");
+
+  public lista:Maquina[]|any=[];
   
   lavadoForm = this.fb.group({
-    fecha1: new FormControl('' ,[Validators.required]),
-    fecha2: new FormControl('' ,[Validators.required]),
-    mucilago1: new FormControl('' ,[Validators.required]),
-    mucilago2: new FormControl('' ,[Validators.required]),
-    agua: new FormControl('' ,[Validators.required]),
+    fechaInicio: new FormControl('' ,[Validators.required]),
+    fechaFinal: new FormControl('' ,[Validators.required]),
+    cantidadEntra: new FormControl('' ,[Validators.required]),
+    cantidadSale: new FormControl('' ,[Validators.required]),
+    cantidadAgua: new FormControl('' ,[Validators.required]),
     maquina: new FormControl('' ,[Validators.required]),
     lote: new FormControl(),
     user: new FormControl(),
@@ -31,6 +35,10 @@ export class CreateLavadoComponent implements OnInit {
   constructor(private RestService: RestService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
+    this.RestService.get(this.url_maquinas)
+    .subscribe(lista => {
+      this.lista = lista;
+    } )
   }
   
   submit() {
@@ -41,6 +49,7 @@ export class CreateLavadoComponent implements OnInit {
   crearLavado() {
     this.lavadoForm.get('lote')?.setValue(Number(this.id_lote));
     this.lavadoForm.get('user')?.setValue(Number(localStorage.getItem('user_id')));
+    console.log(this.lavadoForm.value);
     this.RestService.post(this.url_createLavado, this.lavadoForm.value)
     .subscribe( (data: any) => {
     } )
@@ -51,7 +60,7 @@ export class CreateLavadoComponent implements OnInit {
     this.RestService.get(this.url_viewLote + this.id_lote)
     .subscribe( (data: any) => {
       console.log(data);
-      data.estado = "lavado";
+      data.estado = "Lavado";
       this.RestService.post(this.url_updateLote + this.id_lote, data)
       .subscribe( (resp: any) => {
         const Toast = Swal.mixin({

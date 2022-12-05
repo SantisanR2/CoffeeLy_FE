@@ -3,19 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { EditComponent } from './features/maquina/edit/edit.component';
+import { NavEmpresaModule } from "./shared/nav-empresa/nav-empresa.module"; 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    EditComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        NavEmpresaModule
+    ]
 })
 export class AppModule { }

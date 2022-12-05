@@ -4,6 +4,7 @@ import { AdminComponent } from './admin/admin.component';
 import { SuperuserRoutingModule } from './superuser-routing.module';
 import { RestService } from './services/rest.service';
 import { HttpClientModule } from '@angular/common/http';
+import { NavEmpresaModule } from 'src/app/shared/nav-empresa/nav-empresa.module';
 
 
 
@@ -14,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     SuperuserRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NavEmpresaModule
   ],
   exports: [
     AdminComponent

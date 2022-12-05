@@ -45,24 +45,26 @@
                 </div>
                 <div class="form-group">
                     <label for="inputTipo"> Tipo</label>
-                    <select class="opciones"  (change)="changeTipo($event)" formControlName="tipo">
-                        <option value="">Elija un tipo</option>
-                        <option *ngFor="let tipo of Tipos" [ngValue]="tipo">
-                            {{ tipo }}
-                        </option>
+                    <select class="opciones" formControlName="tipo">
+                        <option value="Anaeróbica">Anaeróbica</option>
+                        <option value="Microorganismos">Microorganismos</option>
+                        <option value="Maceración carbónica">Maceración carbónica</option>
                     </select>
                 </div> 
                 <div class="form-group">
                     <label for="inputMaquina"> Máquina </label>
-                    <input type="text" placeholder="Marca, Modelo" id="inputMaquina" formControlName="maquina">
+                    <select name="miselect" id="inputMaquina" formControlName="maquina">
+                        <option [ngValue]="objeto.id" *ngFor="let objeto of lista">{{objeto.marca}}-{{objeto.modelo}} #{{objeto.id}}</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <img src="../../../../assets/info.png" class="info" (click)="info()">
                 </div>
+                <div class="submit-group">
+                    <input type="submit" [disabled]="!fermentacionForm.valid" value="Ingresar">
+                </div>
             </form>
-            <div class="submit-group">
-                <input type="submit" [disabled]="!fermentacionForm.valid" value="Ingresar">
-            </div>
+            
         </div>
     </div>  
 </div>
