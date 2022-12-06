@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  app: "http://127.0.0.1:8000"
+  app: "http://3.239.210.72:8000"
 };
