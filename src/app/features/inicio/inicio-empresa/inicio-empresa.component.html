@@ -32,10 +32,10 @@
                         <div class="col-md-4 d-md-flex justify-content-md-end align-items-md-center justify-content-lg-end justify-content-xl-end justify-content-xxl-end">
                             <div class="dropdown"><button class="btn btn-primary dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" data-bs-auto-close="outside" type="button" style="border-top-left-radius: 8px;border-top-right-radius: 8px;border-bottom-right-radius: 8px;border-bottom-left-radius: 8px;background: #C29F42;color: #282726;border-width: 1px;border-color: #282726;" (click)="cambio(lote.estaCosechado)">Opciones</button>
                                 <div class="dropdown-menu dropdown-menu-dark">
-                                    <a class="dropdown-item" (click)="continuar(lote.estado,lote.id)" *ngIf="estaCosechado"><i class="far fa-arrow-alt-circle-right" style="padding-right: 10px;"></i>Continuar</a>
-                                    <a class="dropdown-item" (click)="detail(lote.id)"><i class="far fa-file-alt" style="padding-right: 10px;"></i>Historial</a>
-                                    <a class="dropdown-item" (click)="edit(lote.id)"><i class="far fa-edit" style="padding-right: 10px;"></i>Editar</a>
-                                    <a class="dropdown-item" (click)="delete(lote.id)" style="background: #cf4040;"><i class="far fa-trash-alt" style="padding-right: 10px;"></i>Eliminar</a></div>
+                                    <a class="dropdown-item" (click)="continuar(lote.estado,lote.id)" *ngIf="estaCosechado" style="cursor: pointer;"><i class="far fa-arrow-alt-circle-right" style="padding-right: 10px;"></i>Continuar</a>
+                                    <a class="dropdown-item" (click)="detail(lote.id)" style="cursor: pointer;"><i class="far fa-file-alt" style="padding-right: 10px;"></i>Historial</a>
+                                    <a class="dropdown-item" (click)="edit(lote.id)" style="cursor: pointer;"><i class="far fa-edit" style="padding-right: 10px;"></i>Editar</a>
+                                    <a class="dropdown-item" (click)="delete(lote.id)" style="background: #cf4040; cursor: pointer;"><i class="far fa-trash-alt" style="padding-right: 10px;"></i>Eliminar</a></div>
                             </div>
                         </div>
                     </div>
