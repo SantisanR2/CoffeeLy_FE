@@ -32,7 +32,7 @@ export class NavBarComponent implements OnInit {
 
   inicio() {
     if(localStorage.getItem("isAuth")) {
-      if(localStorage.getItem("role") == "2" || "1") {
+      if(localStorage.getItem("role") == "2" || localStorage.getItem("role") == "1") {
         this.router.navigate(['inicio/finca']);
       }
       else {

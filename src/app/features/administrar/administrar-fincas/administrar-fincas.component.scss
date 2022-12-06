@@ -1,11 +1,15 @@
 .inicio {
-    min-width: 420px;
     background-color: var(--coffeLy);
     display: flex;
     flex-direction: column;
     color: var(--coffeLy-font);
     font-size: larger;
     min-height: 88.9%;
+}
+
+body {
+    background-color: var(--coffeLy);
+    height: 100%;
 }
 
 h1 {
@@ -16,43 +20,8 @@ h1 {
     font-weight: bold;
 }
 
-table {
-    width: 100%;
-    border-collapse: separate; 
-    border-spacing: 3vh;
-}
-
-.item {
-    border-radius: 18px;
-    -webkit-box-shadow: 0px 0px 7px 0px #997d30; 
-    box-shadow: 0px 0px 7px 0px #997d30;
-    color: #A6A7A3;
-}
-
-td {
-    align-content: center;
-    text-align: center;
-    width: calc(100% / 3);
-    min-height: 45px;
-    vertical-align: middle;
-    padding: 5px;
-}
-
-tr:first-child {
-    height: 50px;
-}
-
-.bold {
-    font-weight: bold;
-}
-
 .item span {
     font-family: Basker;
-}
-
-.delete img {
-    height: 2rem;
-    cursor: pointer;
 }
 
 .btn {

@@ -21,6 +21,7 @@ export class AdministrarOperariosComponent implements OnInit {
     this.RestService.get_token('/users/', localStorage.getItem("token_access") as string)
     .subscribe(respuesta => {
       this.respuesta = Object.values(respuesta)[3];
+      this.respuesta = this.respuesta.filter((item:any) => item.id != localStorage.getItem("user_id"));
     } )
   }
 
@@ -67,6 +68,10 @@ export class AdministrarOperariosComponent implements OnInit {
         })
       }
     })
+  }
+
+  nuevo() {
+    this.router.navigate(['login/register']).then(this.refresh); 
   }
 
   refresh() {

@@ -69,7 +69,7 @@ export class AdministrarFincasComponent implements OnInit {
           this.borrar(id),
           swalWithBootstrapButtons.fire({
           title: 'En proceso...',
-          text: 'La máquina está siendo eliminada',
+          text: 'La finca está siendo eliminada',
           confirmButtonText: 'Aceptar',
           background: '#282726',
           color: '#C29F42',
@@ -77,7 +77,7 @@ export class AdministrarFincasComponent implements OnInit {
             if(result.isConfirmed){
               Swal.fire({
                 title:'Proceso exitoso',
-                text:'La máquina ha sido eliminada!',
+                text:'La finca ha sido eliminada!',
                 icon: 'success',
                 confirmButtonText: 'Aceptar',
                 background: '#282726',

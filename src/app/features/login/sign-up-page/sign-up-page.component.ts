@@ -57,12 +57,12 @@ export class SignUpPageComponent implements OnInit {
     data.append("fecha", this.registerForm.controls['fecha'].value);
     if(localStorage.getItem("role") == '2') {
       data.append("role", "1");
+    } else if (localStorage.getItem("role") == '4' && localStorage.getItem('isCreatingFinca') == 'true') {
+      data.append("role", "2");
     } else if (localStorage.getItem("role") == '4') {
       data.append("role", "3");
     }
-    else if (localStorage.getItem("role") == '4' && localStorage.getItem('isCreatingFinca') == 'true') {
-      data.append("role", "2");
-    }
+    
     console.log(data.get)
     this.loginService.register(data).subscribe( (data: any) =>  this.completedLogIn(data),
     (error: any) => {                              

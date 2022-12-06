@@ -1,28 +1,30 @@
-<header>
-    <app-nav-bar></app-nav-bar>
-</header>
-<div class="contenedor">
-    <h1><b>Bienvenido a CoffeeLy</b></h1>
-    <form (ngSubmit)="submit()" class="card-login" [formGroup]="loginForm">
-        <div class="form-group">
-            <label for="inputEmail">Correo</label>  
-            <input type="text" placeholder="Ej: ejemplo@gmail.com" id="inputEmail" formControlName="correo">
-        </div> 
-        <div class="form-group">
-            <label for="inputContrasena">Contraseña</label> 
-            <input type="password" placeholder="Escribe tu contraseña" id="inputContrasena" formControlName="password">
-        </div>     
-        <div [hidden]="((!password.hasError('required') && !correo.hasError('required')) || password.hasError('required') && correo.hasError('required') || !password.hasError('required') && correo.hasError('required') || correo.hasError('email'))" class="alerta-password">
-            La contraseña es requerida
-        </div>
-        <div [hidden]="(!correo.hasError('email'))" class="alerta-correo">
-            Ingrese un correo válido
-        </div>
-        <div class="form-group">
-            <input type="submit" [disabled]="!loginForm.valid" value="Ingresar">
-        </div>        
-    </form>
-</div>
-<footer>
-    <app-footer></app-footer>
-</footer>
+<body>
+    <header>
+        <app-nav-bar></app-nav-bar>
+    </header>
+    <div class="contenedor" style="margin-bottom: 40px;">
+        <h1><b>Bienvenido a CoffeeLy</b></h1>
+        <form (ngSubmit)="submit()" class="card-login" [formGroup]="loginForm">
+            <div class="form-group">
+                <label for="inputEmail">Correo</label>  
+                <input type="text" placeholder="Ej: ejemplo@gmail.com" id="inputEmail" formControlName="correo">
+            </div> 
+            <div class="form-group">
+                <label for="inputContrasena">Contraseña</label> 
+                <input type="password" placeholder="Escribe tu contraseña" id="inputContrasena" formControlName="password">
+            </div>     
+            <div [hidden]="((!password.hasError('required') && !correo.hasError('required')) || password.hasError('required') && correo.hasError('required') || !password.hasError('required') && correo.hasError('required') || correo.hasError('email'))" class="alerta-password">
+                La contraseña es requerida
+            </div>
+            <div [hidden]="(!correo.hasError('email'))" class="alerta-correo">
+                Ingrese un correo válido
+            </div>
+            <div class="form-group">
+                <input type="submit" [disabled]="!loginForm.valid" value="Ingresar">
+            </div>        
+        </form>
+    </div>
+    <footer>
+        <app-footer></app-footer>
+    </footer>
+</body>
