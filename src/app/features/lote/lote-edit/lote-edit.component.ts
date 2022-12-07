@@ -29,7 +29,11 @@ export class LoteEditComponent implements OnInit {
 
   submit() {
     this.updateLote();
-    this.router.navigate(['inicio/finca']);
+    if (localStorage.getItem("role") == "1" || localStorage.getItem("role") == "2") {
+      this.router.navigate(['inicio/finca']);
+    } else {
+      this.router.navigate(['inicio/empresa']);
+    }
   }
 
   updateLote() {
