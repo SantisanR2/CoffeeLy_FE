@@ -78,7 +78,8 @@ body {
 .button img{
     border-radius: 5px;
     width: 10vw;
-    max-width: 100%;    
+    max-width: 100%;  
+    min-width: 200px;  
     cursor: pointer;
     height: auto;
     object-fit: contain;
@@ -91,7 +92,7 @@ body {
     background-color: #313131;
     color: #C29F42;
     width: 10vw;
-    min-width: 10vw;
+    min-width: 200px;
     height: 4vh;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding-top: 3%;
@@ -106,7 +107,17 @@ body {
         font-size: smaller
     }
 
+    .container-empresa{
+        flex-direction: column;
+    }
 
+    .container-finca{
+        flex-direction: column;
+    }
+
+    .container-entes{
+        flex-direction: column;
+    }
 
   }
 

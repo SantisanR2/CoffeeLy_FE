@@ -19,7 +19,7 @@
         <form class="card-catacion" (ngSubmit)="submit()" [formGroup]="catacionForm">
             <div class="form-group">
                 <label for="inputDate">Fecha</label>  
-                <input type="datetime-local" id="inputDate" formControlName="fecha">
+                <input type="date" id="inputDate" formControlName="fecha">
             </div>    
 
             <div class="form-group unidad">
@@ -68,11 +68,6 @@
                 <label for="inputPuntaje">Puntaje SCA</label>
                 <input type="number" step="any" min="0" max= "100" placeholder="0-100" id="inputPuntaje" formControlName="puntaje">
             </div>
-            <div class="form-group">
-                <label for="inputTabla"> Tabla </label>
-                <input type="file" accept="image/*,.pdf" id="inputCurva" formControlName="curva">
-            </div>
-
             <div class="form-group">
                 <input type="submit" value="Ingresar">
             </div>

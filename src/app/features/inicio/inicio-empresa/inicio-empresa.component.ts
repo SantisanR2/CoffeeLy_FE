@@ -166,6 +166,20 @@ export class InicioEmpresaComponent implements OnInit {
     } else if (estado == 'tostado') {
       localStorage.setItem("lote", id);
       this.router.navigate(['create/catacion']).then(this.refresh);
+    } else if (estado == 'catado') {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 5000,
+        background: '#282726',
+        color: '#C29F42',
+      })
+      
+      Toast.fire({
+        icon: 'info',
+        title: 'Este lote ya completó su ciclo'
+      })
     }
   }
 

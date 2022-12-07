@@ -79,6 +79,7 @@ export class CreateFermentacionComponent implements OnInit {
 
   submit() {
     this.crearFermentacion();
+    this.router.navigate(['inicio/empresa']);
   }
 
   crearFermentacion() {

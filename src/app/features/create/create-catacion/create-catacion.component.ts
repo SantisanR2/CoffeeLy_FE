@@ -19,10 +19,12 @@ export class CreateCatacionComponent implements OnInit {
   catacionForm = this.fb.group({
     fecha: new FormControl('' ,[Validators.required]),
     tiempo1: new FormControl('' ,[Validators.required]),
+    temp1: new FormControl('' ,[Validators.required]),
     tiempo2: new FormControl('' ,[Validators.required]),
+    temp2: new FormControl('' ,[Validators.required]),
     tiempo3: new FormControl('' ,[Validators.required]),
+    temp3: new FormControl('' ,[Validators.required]),
     puntaje: new FormControl('' ,[Validators.required]),
-    curva: new FormControl('' ,[Validators.required]),
     lote: new FormControl(),
     user: new FormControl(),
   });
